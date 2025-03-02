@@ -31,7 +31,7 @@ bool initGame()
 	renderer.create();
 
     if (!std::filesystem::exists(RESOURCES_PATH"spaceShip/ships/green.png")) {
-        std::cerr << "Error: No se encontró la imagen de la nave"<< std::endl;
+        std::cerr << "Error: No se encontró la imagen de la nave Jugador "<< std::endl;
     } else {
         texturaNavePrincipal.loadFromFile(RESOURCES_PATH"spaceShip/ships/green.png", true);
     }
@@ -54,6 +54,32 @@ bool gameLogic(float deltaTime)
 	renderer.updateWindowMetrics(w, h);
 #pragma endregion
 
+#pragma region movimiento
+    glm::vec2 movimiento = {};
+
+    //movimiento de posicion
+    if(platform::isButtonHeld(platform::Button::Left) || platform::isButtonHeld(platform::Button::A)){
+        movimiento.x -=1 ;
+    }
+    if(platform::isButtonHeld(platform::Button::Right) || platform::isButtonHeld(platform::Button::D)){
+        movimiento.x += 1;
+    }
+    if(platform::isButtonHeld(platform::Button::Up) || platform::isButtonHeld(platform::Button::W)){
+        movimiento.y -= 1;
+    }
+    if(platform::isButtonHeld(platform::Button::Down) || platform::isButtonHeld(platform::Button::S)){
+        movimiento.y += 1;
+    }
+
+    //normalizacion del vector para que la diagonal vaya a la misma velocidad
+    if(movimiento.x !=0 || movimiento.y !=0){
+
+        movimiento = glm::normalize(movimiento);
+        movimiento *= deltaTime * 400;
+        datosJuego.playerPos += movimiento;
+
+    }
+#pragma endregion
 
     renderer.renderRectangle({datosJuego.playerPos , 100, 100}, texturaNavePrincipal);
 
