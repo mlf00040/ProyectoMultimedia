@@ -17,12 +17,14 @@
 struct DatosJuego{
 
     glm::vec2 playerPos = {100,100};
+    float direccionGiro = -90.0f;
 
 }datosJuego;
 
+#pragma region inicializacion de texturas
 gl2d::Renderer2D renderer;
 gl2d::Texture texturaNavePrincipal;
-
+#pragma endregion
 
 bool initGame()
 {
@@ -78,10 +80,14 @@ bool gameLogic(float deltaTime)
         movimiento *= deltaTime * 400;
         datosJuego.playerPos += movimiento;
 
+        //Rotacion del personaje
+        float direccionRad = atan2(movimiento.y, -movimiento.x);
+        datosJuego.direccionGiro = glm::degrees(direccionRad);
+
     }
 #pragma endregion
 
-    renderer.renderRectangle({datosJuego.playerPos , 100, 100}, texturaNavePrincipal);
+    renderer.renderRectangle({datosJuego.playerPos , 100, 100}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
 
 
 
