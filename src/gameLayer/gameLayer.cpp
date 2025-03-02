@@ -10,12 +10,18 @@
 #include "imfilebrowser.h"
 #include <gl2d/gl2d.h>
 #include <platformTools.h>
+#include <filesystem>
 
 
+
+struct DatosJuego{
+
+    glm::vec2 playerPos = {100,100};
+
+}datosJuego;
 
 gl2d::Renderer2D renderer;
-
-
+gl2d::Texture texturaNavePrincipal;
 
 
 bool initGame()
@@ -24,7 +30,11 @@ bool initGame()
 	gl2d::init();
 	renderer.create();
 
-	
+    if (!std::filesystem::exists(RESOURCES_PATH"spaceShip/ships/green.png")) {
+        std::cerr << "Error: No se encontró la imagen de la nave"<< std::endl;
+    } else {
+        texturaNavePrincipal.loadFromFile(RESOURCES_PATH"spaceShip/ships/green.png", true);
+    }
 	
 	return true;
 }
@@ -45,8 +55,8 @@ bool gameLogic(float deltaTime)
 #pragma endregion
 
 
+    renderer.renderRectangle({datosJuego.playerPos , 100, 100}, texturaNavePrincipal);
 
-	renderer.renderRectangle({100,100, 100, 100}, Colors_Blue);
 
 
 	renderer.flush();

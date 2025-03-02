@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2
+# Install script for directory: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src/cmake_install.cmake")
 
 endif()
 

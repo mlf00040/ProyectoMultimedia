@@ -3,14 +3,14 @@
 cmake_policy(SET CMP0009 NEW)
 
 # MY_SOURCES at CMakeLists.txt:43 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/src/*.cpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/src/*.cpp")
 set(OLD_GLOB
-  "C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/src/gameLayer/gameLayer.cpp"
-  "C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/src/platform/glfwMain.cpp"
-  "C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/src/platform/opterPlatformFunctions.cpp"
-  "C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/src/platform/platformInput.cpp"
+  "C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/src/gameLayer/gameLayer.cpp"
+  "C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/src/platform/glfwMain.cpp"
+  "C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/src/platform/opterPlatformFunctions.cpp"
+  "C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/src/platform/platformInput.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/CMakeFiles/cmake.verify_globs")
 endif()

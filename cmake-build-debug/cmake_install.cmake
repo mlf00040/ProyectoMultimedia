@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57
+# Install script for directory: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,57 +39,57 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glad/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glad/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/stb_image/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/stb_image/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/stb_truetype/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/stb_truetype/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/raudio/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/raudio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glm/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/imgui-docking/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/imgui-docking/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/safeSave/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/safeSave/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/profilerLib/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/profilerLib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/gl2d/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/gl2d/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glui/cmake_install.cmake")
+  include("C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glui/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -107,6 +107,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

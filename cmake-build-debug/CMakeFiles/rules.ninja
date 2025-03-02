@@ -213,7 +213,7 @@ rule CXX_STATIC_LIBRARY_LINKER__glui_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug
+  command = C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
@@ -222,7 +222,7 @@ rule RERUN_CMAKE
 # Rule for re-checking globbed directories.
 
 rule VERIFY_GLOBS
-  command = C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -P C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\CMakeFiles\VerifyGlobs.cmake
+  command = C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -P C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\CMakeFiles\VerifyGlobs.cmake
   description = Re-checking globbed directories...
   generator = 1
 

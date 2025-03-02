@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/raudio
+# Install script for directory: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/raudio
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

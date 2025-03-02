@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target spaceGame
 
@@ -49,37 +49,45 @@ cmake_ninja_workdir = C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211
 
 build cmake_object_order_depends_target_spaceGame: phony || cmake_object_order_depends_target_gl2d cmake_object_order_depends_target_glad cmake_object_order_depends_target_glfw cmake_object_order_depends_target_glui cmake_object_order_depends_target_imgui cmake_object_order_depends_target_raudio cmake_object_order_depends_target_safeSave cmake_object_order_depends_target_stb_image cmake_object_order_depends_target_stb_truetype
 
-build CMakeFiles/spaceGame.dir/src/gameLayer/gameLayer.cpp.obj: CXX_COMPILER__spaceGame_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/src/gameLayer/gameLayer.cpp || cmake_object_order_depends_target_spaceGame
-  DEFINES = -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/resources/\"
+build CMakeFiles/spaceGame.dir/src/gameLayer/gameLayer.cpp.obj: CXX_COMPILER__spaceGame_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/src/gameLayer/gameLayer.cpp || cmake_object_order_depends_target_spaceGame
+  DEFINES = -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/resources/\"
   DEP_FILE = CMakeFiles\spaceGame.dir\src\gameLayer\gameLayer.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include/gameLayer -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include/platform -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/raudio/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/safeSave/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/profilerLib/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glui/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include/gameLayer -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include/platform -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/raudio/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/safeSave/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/profilerLib/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glui/include
   OBJECT_DIR = CMakeFiles\spaceGame.dir
   OBJECT_FILE_DIR = CMakeFiles\spaceGame.dir\src\gameLayer
+  TARGET_COMPILE_PDB = CMakeFiles\spaceGame.dir\
+  TARGET_PDB = spaceGame.pdb
 
-build CMakeFiles/spaceGame.dir/src/platform/glfwMain.cpp.obj: CXX_COMPILER__spaceGame_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/src/platform/glfwMain.cpp || cmake_object_order_depends_target_spaceGame
-  DEFINES = -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/resources/\"
+build CMakeFiles/spaceGame.dir/src/platform/glfwMain.cpp.obj: CXX_COMPILER__spaceGame_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/src/platform/glfwMain.cpp || cmake_object_order_depends_target_spaceGame
+  DEFINES = -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/resources/\"
   DEP_FILE = CMakeFiles\spaceGame.dir\src\platform\glfwMain.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include/gameLayer -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include/platform -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/raudio/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/safeSave/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/profilerLib/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glui/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include/gameLayer -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include/platform -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/raudio/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/safeSave/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/profilerLib/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glui/include
   OBJECT_DIR = CMakeFiles\spaceGame.dir
   OBJECT_FILE_DIR = CMakeFiles\spaceGame.dir\src\platform
+  TARGET_COMPILE_PDB = CMakeFiles\spaceGame.dir\
+  TARGET_PDB = spaceGame.pdb
 
-build CMakeFiles/spaceGame.dir/src/platform/opterPlatformFunctions.cpp.obj: CXX_COMPILER__spaceGame_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/src/platform/opterPlatformFunctions.cpp || cmake_object_order_depends_target_spaceGame
-  DEFINES = -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/resources/\"
+build CMakeFiles/spaceGame.dir/src/platform/opterPlatformFunctions.cpp.obj: CXX_COMPILER__spaceGame_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/src/platform/opterPlatformFunctions.cpp || cmake_object_order_depends_target_spaceGame
+  DEFINES = -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/resources/\"
   DEP_FILE = CMakeFiles\spaceGame.dir\src\platform\opterPlatformFunctions.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include/gameLayer -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include/platform -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/raudio/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/safeSave/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/profilerLib/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glui/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include/gameLayer -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include/platform -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/raudio/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/safeSave/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/profilerLib/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glui/include
   OBJECT_DIR = CMakeFiles\spaceGame.dir
   OBJECT_FILE_DIR = CMakeFiles\spaceGame.dir\src\platform
+  TARGET_COMPILE_PDB = CMakeFiles\spaceGame.dir\
+  TARGET_PDB = spaceGame.pdb
 
-build CMakeFiles/spaceGame.dir/src/platform/platformInput.cpp.obj: CXX_COMPILER__spaceGame_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/src/platform/platformInput.cpp || cmake_object_order_depends_target_spaceGame
-  DEFINES = -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/resources/\"
+build CMakeFiles/spaceGame.dir/src/platform/platformInput.cpp.obj: CXX_COMPILER__spaceGame_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/src/platform/platformInput.cpp || cmake_object_order_depends_target_spaceGame
+  DEFINES = -DPRODUCTION_BUILD=0 -DRESOURCES_PATH=\"C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/resources/\"
   DEP_FILE = CMakeFiles\spaceGame.dir\src\platform\platformInput.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include/gameLayer -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/include/platform -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/raudio/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/safeSave/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/profilerLib/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glui/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include/gameLayer -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/include/platform -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/raudio/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/safeSave/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/profilerLib/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glui/include
   OBJECT_DIR = CMakeFiles\spaceGame.dir
   OBJECT_FILE_DIR = CMakeFiles\spaceGame.dir\src\platform
+  TARGET_COMPILE_PDB = CMakeFiles\spaceGame.dir\
+  TARGET_PDB = spaceGame.pdb
 
 
 # =============================================================================
@@ -95,16 +103,17 @@ build spaceGame.exe: CXX_EXECUTABLE_LINKER__spaceGame_Debug CMakeFiles/spaceGame
   OBJECT_DIR = CMakeFiles\spaceGame.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\spaceGame.dir\
   TARGET_FILE = spaceGame.exe
   TARGET_IMPLIB = libspaceGame.dll.a
-  TARGET_PDB = spaceGame.exe.dbg
+  TARGET_PDB = spaceGame.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -115,7 +124,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -124,7 +133,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 
@@ -132,7 +141,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build thirdparty/glfw-3.3.2/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\glfw-3.3.2 && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\glfw-3.3.2 && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -143,7 +152,7 @@ build thirdparty/glfw-3.3.2/edit_cache: phony thirdparty/glfw-3.3.2/CMakeFiles/e
 # Utility command for rebuild_cache
 
 build thirdparty/glfw-3.3.2/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\glfw-3.3.2 && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\glfw-3.3.2 && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -152,7 +161,7 @@ build thirdparty/glfw-3.3.2/rebuild_cache: phony thirdparty/glfw-3.3.2/CMakeFile
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -164,125 +173,155 @@ build thirdparty/glfw-3.3.2/rebuild_cache: phony thirdparty/glfw-3.3.2/CMakeFile
 
 build cmake_object_order_depends_target_glfw: phony || .
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/context.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/context.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/context.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\context.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/init.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/init.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/init.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/init.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\init.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/input.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/input.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/input.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\input.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/monitor.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/monitor.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/monitor.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/monitor.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\monitor.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/vulkan.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/vulkan.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/vulkan.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/vulkan.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\vulkan.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/window.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/window.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/window.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/window.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\window.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_init.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/win32_init.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_init.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/win32_init.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\win32_init.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_joystick.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/win32_joystick.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_joystick.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/win32_joystick.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\win32_joystick.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_monitor.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/win32_monitor.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_monitor.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/win32_monitor.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\win32_monitor.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_time.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/win32_time.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_time.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/win32_time.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\win32_time.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_thread.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/win32_thread.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_thread.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/win32_thread.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\win32_thread.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_window.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/win32_window.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/win32_window.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/win32_window.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\win32_window.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/wgl_context.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/wgl_context.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/wgl_context.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/wgl_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\wgl_context.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/egl_context.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/egl_context.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/egl_context.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/egl_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\egl_context.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
-build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/osmesa_context.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/osmesa_context.c || cmake_object_order_depends_target_glfw
+build thirdparty/glfw-3.3.2/src/CMakeFiles/glfw.dir/osmesa_context.c.obj: C_COMPILER__glfw_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/osmesa_context.c || cmake_object_order_depends_target_glfw
   DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE
   DEP_FILE = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\osmesa_context.c.obj.d
   FLAGS = -g -std=gnu99 -fdiagnostics-color=always -mfma -Wall -Wdeclaration-after-statement
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   OBJECT_FILE_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
 
 # =============================================================================
@@ -297,15 +336,16 @@ build thirdparty/glfw-3.3.2/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw_Debug 
   OBJECT_DIR = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = thirdparty\glfw-3.3.2\src\CMakeFiles\glfw.dir\glfw.pdb
   TARGET_FILE = thirdparty\glfw-3.3.2\src\libglfw3.a
-  TARGET_PDB = glfw3.a.dbg
+  TARGET_PDB = thirdparty\glfw-3.3.2\src\libglfw3.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\glfw-3.3.2\src && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\glfw-3.3.2\src && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -316,7 +356,7 @@ build thirdparty/glfw-3.3.2/src/edit_cache: phony thirdparty/glfw-3.3.2/src/CMak
 # Utility command for rebuild_cache
 
 build thirdparty/glfw-3.3.2/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\glfw-3.3.2\src && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\glfw-3.3.2\src && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -325,7 +365,7 @@ build thirdparty/glfw-3.3.2/src/rebuild_cache: phony thirdparty/glfw-3.3.2/src/C
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -337,12 +377,14 @@ build thirdparty/glfw-3.3.2/src/rebuild_cache: phony thirdparty/glfw-3.3.2/src/C
 
 build cmake_object_order_depends_target_glad: phony || .
 
-build thirdparty/glad/CMakeFiles/glad.dir/src/glad.c.obj: C_COMPILER__glad_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/src/glad.c || cmake_object_order_depends_target_glad
+build thirdparty/glad/CMakeFiles/glad.dir/src/glad.c.obj: C_COMPILER__glad_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/src/glad.c || cmake_object_order_depends_target_glad
   DEP_FILE = thirdparty\glad\CMakeFiles\glad.dir\src\glad.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include
   OBJECT_DIR = thirdparty\glad\CMakeFiles\glad.dir
   OBJECT_FILE_DIR = thirdparty\glad\CMakeFiles\glad.dir\src
+  TARGET_COMPILE_PDB = thirdparty\glad\CMakeFiles\glad.dir\glad.pdb
+  TARGET_PDB = thirdparty\glad\libglad.pdb
 
 
 # =============================================================================
@@ -357,15 +399,16 @@ build thirdparty/glad/libglad.a: C_STATIC_LIBRARY_LINKER__glad_Debug thirdparty/
   OBJECT_DIR = thirdparty\glad\CMakeFiles\glad.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = thirdparty\glad\CMakeFiles\glad.dir\glad.pdb
   TARGET_FILE = thirdparty\glad\libglad.a
-  TARGET_PDB = glad.a.dbg
+  TARGET_PDB = thirdparty\glad\libglad.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build thirdparty/glad/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\glad && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\glad && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -376,7 +419,7 @@ build thirdparty/glad/edit_cache: phony thirdparty/glad/CMakeFiles/edit_cache.ut
 # Utility command for rebuild_cache
 
 build thirdparty/glad/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\glad && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\glad && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -385,7 +428,7 @@ build thirdparty/glad/rebuild_cache: phony thirdparty/glad/CMakeFiles/rebuild_ca
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -397,12 +440,14 @@ build thirdparty/glad/rebuild_cache: phony thirdparty/glad/CMakeFiles/rebuild_ca
 
 build cmake_object_order_depends_target_stb_image: phony || .
 
-build thirdparty/stb_image/CMakeFiles/stb_image.dir/src/stb_image.cpp.obj: CXX_COMPILER__stb_image_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/src/stb_image.cpp || cmake_object_order_depends_target_stb_image
+build thirdparty/stb_image/CMakeFiles/stb_image.dir/src/stb_image.cpp.obj: CXX_COMPILER__stb_image_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/src/stb_image.cpp || cmake_object_order_depends_target_stb_image
   DEP_FILE = thirdparty\stb_image\CMakeFiles\stb_image.dir\src\stb_image.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/include
   OBJECT_DIR = thirdparty\stb_image\CMakeFiles\stb_image.dir
   OBJECT_FILE_DIR = thirdparty\stb_image\CMakeFiles\stb_image.dir\src
+  TARGET_COMPILE_PDB = thirdparty\stb_image\CMakeFiles\stb_image.dir\stb_image.pdb
+  TARGET_PDB = thirdparty\stb_image\libstb_image.pdb
 
 
 # =============================================================================
@@ -417,15 +462,16 @@ build thirdparty/stb_image/libstb_image.a: CXX_STATIC_LIBRARY_LINKER__stb_image_
   OBJECT_DIR = thirdparty\stb_image\CMakeFiles\stb_image.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = thirdparty\stb_image\CMakeFiles\stb_image.dir\stb_image.pdb
   TARGET_FILE = thirdparty\stb_image\libstb_image.a
-  TARGET_PDB = stb_image.a.dbg
+  TARGET_PDB = thirdparty\stb_image\libstb_image.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build thirdparty/stb_image/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\stb_image && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\stb_image && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -436,7 +482,7 @@ build thirdparty/stb_image/edit_cache: phony thirdparty/stb_image/CMakeFiles/edi
 # Utility command for rebuild_cache
 
 build thirdparty/stb_image/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\stb_image && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\stb_image && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -445,7 +491,7 @@ build thirdparty/stb_image/rebuild_cache: phony thirdparty/stb_image/CMakeFiles/
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -457,12 +503,14 @@ build thirdparty/stb_image/rebuild_cache: phony thirdparty/stb_image/CMakeFiles/
 
 build cmake_object_order_depends_target_stb_truetype: phony || .
 
-build thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/src/stb_truetype.cpp.obj: CXX_COMPILER__stb_truetype_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/src/stb_truetype.cpp || cmake_object_order_depends_target_stb_truetype
+build thirdparty/stb_truetype/CMakeFiles/stb_truetype.dir/src/stb_truetype.cpp.obj: CXX_COMPILER__stb_truetype_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/src/stb_truetype.cpp || cmake_object_order_depends_target_stb_truetype
   DEP_FILE = thirdparty\stb_truetype\CMakeFiles\stb_truetype.dir\src\stb_truetype.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/include
   OBJECT_DIR = thirdparty\stb_truetype\CMakeFiles\stb_truetype.dir
   OBJECT_FILE_DIR = thirdparty\stb_truetype\CMakeFiles\stb_truetype.dir\src
+  TARGET_COMPILE_PDB = thirdparty\stb_truetype\CMakeFiles\stb_truetype.dir\stb_truetype.pdb
+  TARGET_PDB = thirdparty\stb_truetype\libstb_truetype.pdb
 
 
 # =============================================================================
@@ -477,15 +525,16 @@ build thirdparty/stb_truetype/libstb_truetype.a: CXX_STATIC_LIBRARY_LINKER__stb_
   OBJECT_DIR = thirdparty\stb_truetype\CMakeFiles\stb_truetype.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = thirdparty\stb_truetype\CMakeFiles\stb_truetype.dir\stb_truetype.pdb
   TARGET_FILE = thirdparty\stb_truetype\libstb_truetype.a
-  TARGET_PDB = stb_truetype.a.dbg
+  TARGET_PDB = thirdparty\stb_truetype\libstb_truetype.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build thirdparty/stb_truetype/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\stb_truetype && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\stb_truetype && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -496,7 +545,7 @@ build thirdparty/stb_truetype/edit_cache: phony thirdparty/stb_truetype/CMakeFil
 # Utility command for rebuild_cache
 
 build thirdparty/stb_truetype/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\stb_truetype && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\stb_truetype && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -505,7 +554,7 @@ build thirdparty/stb_truetype/rebuild_cache: phony thirdparty/stb_truetype/CMake
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -517,12 +566,14 @@ build thirdparty/stb_truetype/rebuild_cache: phony thirdparty/stb_truetype/CMake
 
 build cmake_object_order_depends_target_raudio: phony || .
 
-build thirdparty/raudio/CMakeFiles/raudio.dir/src/raudio.c.obj: C_COMPILER__raudio_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/raudio/src/raudio.c || cmake_object_order_depends_target_raudio
+build thirdparty/raudio/CMakeFiles/raudio.dir/src/raudio.c.obj: C_COMPILER__raudio_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/raudio/src/raudio.c || cmake_object_order_depends_target_raudio
   DEP_FILE = thirdparty\raudio\CMakeFiles\raudio.dir\src\raudio.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/raudio/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/raudio/include
   OBJECT_DIR = thirdparty\raudio\CMakeFiles\raudio.dir
   OBJECT_FILE_DIR = thirdparty\raudio\CMakeFiles\raudio.dir\src
+  TARGET_COMPILE_PDB = thirdparty\raudio\CMakeFiles\raudio.dir\raudio.pdb
+  TARGET_PDB = thirdparty\raudio\libraudio.pdb
 
 
 # =============================================================================
@@ -537,15 +588,16 @@ build thirdparty/raudio/libraudio.a: C_STATIC_LIBRARY_LINKER__raudio_Debug third
   OBJECT_DIR = thirdparty\raudio\CMakeFiles\raudio.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = thirdparty\raudio\CMakeFiles\raudio.dir\raudio.pdb
   TARGET_FILE = thirdparty\raudio\libraudio.a
-  TARGET_PDB = raudio.a.dbg
+  TARGET_PDB = thirdparty\raudio\libraudio.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build thirdparty/raudio/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\raudio && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\raudio && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -556,7 +608,7 @@ build thirdparty/raudio/edit_cache: phony thirdparty/raudio/CMakeFiles/edit_cach
 # Utility command for rebuild_cache
 
 build thirdparty/raudio/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\raudio && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\raudio && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -565,7 +617,7 @@ build thirdparty/raudio/rebuild_cache: phony thirdparty/raudio/CMakeFiles/rebuil
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 
@@ -573,7 +625,7 @@ build thirdparty/raudio/rebuild_cache: phony thirdparty/raudio/CMakeFiles/rebuil
 # Utility command for edit_cache
 
 build thirdparty/glm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\glm && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\glm && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -584,7 +636,7 @@ build thirdparty/glm/edit_cache: phony thirdparty/glm/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build thirdparty/glm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\glm && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\glm && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -593,7 +645,7 @@ build thirdparty/glm/rebuild_cache: phony thirdparty/glm/CMakeFiles/rebuild_cach
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -605,54 +657,68 @@ build thirdparty/glm/rebuild_cache: phony thirdparty/glm/CMakeFiles/rebuild_cach
 
 build cmake_object_order_depends_target_imgui: phony || cmake_object_order_depends_target_glad cmake_object_order_depends_target_glfw
 
-build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui/imgui.cpp || cmake_object_order_depends_target_imgui
+build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui/imgui.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui\imgui.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include
   OBJECT_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui
+  TARGET_COMPILE_PDB = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = thirdparty\imgui-docking\libimgui.pdb
 
-build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_demo.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui/imgui_demo.cpp || cmake_object_order_depends_target_imgui
+build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_demo.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui/imgui_demo.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui\imgui_demo.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include
   OBJECT_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui
+  TARGET_COMPILE_PDB = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = thirdparty\imgui-docking\libimgui.pdb
 
-build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_draw.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui/imgui_draw.cpp || cmake_object_order_depends_target_imgui
+build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_draw.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui/imgui_draw.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui\imgui_draw.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include
   OBJECT_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui
+  TARGET_COMPILE_PDB = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = thirdparty\imgui-docking\libimgui.pdb
 
-build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_tables.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui/imgui_tables.cpp || cmake_object_order_depends_target_imgui
+build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_tables.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui/imgui_tables.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui\imgui_tables.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include
   OBJECT_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui
+  TARGET_COMPILE_PDB = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = thirdparty\imgui-docking\libimgui.pdb
 
-build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_widgets.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
+build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/imgui_widgets.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui\imgui_widgets.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include
   OBJECT_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui
+  TARGET_COMPILE_PDB = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = thirdparty\imgui-docking\libimgui.pdb
 
-build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_glfw.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui/backends/imgui_impl_glfw.cpp || cmake_object_order_depends_target_imgui
+build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_glfw.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui/backends/imgui_impl_glfw.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui\backends\imgui_impl_glfw.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include
   OBJECT_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui\backends
+  TARGET_COMPILE_PDB = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = thirdparty\imgui-docking\libimgui.pdb
 
-build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_opengl3.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui/backends/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_imgui
+build thirdparty/imgui-docking/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_opengl3.cpp.obj: CXX_COMPILER__imgui_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui/backends/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui\backends\imgui_impl_opengl3.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/imgui -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include
   OBJECT_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui\backends
+  TARGET_COMPILE_PDB = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = thirdparty\imgui-docking\libimgui.pdb
 
 
 # =============================================================================
@@ -667,15 +733,16 @@ build thirdparty/imgui-docking/libimgui.a: CXX_STATIC_LIBRARY_LINKER__imgui_Debu
   OBJECT_DIR = thirdparty\imgui-docking\CMakeFiles\imgui.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = thirdparty\imgui-docking\CMakeFiles\imgui.dir\imgui.pdb
   TARGET_FILE = thirdparty\imgui-docking\libimgui.a
-  TARGET_PDB = imgui.a.dbg
+  TARGET_PDB = thirdparty\imgui-docking\libimgui.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build thirdparty/imgui-docking/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\imgui-docking && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\imgui-docking && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -686,7 +753,7 @@ build thirdparty/imgui-docking/edit_cache: phony thirdparty/imgui-docking/CMakeF
 # Utility command for rebuild_cache
 
 build thirdparty/imgui-docking/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\imgui-docking && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\imgui-docking && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -695,7 +762,7 @@ build thirdparty/imgui-docking/rebuild_cache: phony thirdparty/imgui-docking/CMa
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -707,12 +774,14 @@ build thirdparty/imgui-docking/rebuild_cache: phony thirdparty/imgui-docking/CMa
 
 build cmake_object_order_depends_target_safeSave: phony || .
 
-build thirdparty/safeSave/CMakeFiles/safeSave.dir/src/safeSave.cpp.obj: CXX_COMPILER__safeSave_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/safeSave/src/safeSave.cpp || cmake_object_order_depends_target_safeSave
+build thirdparty/safeSave/CMakeFiles/safeSave.dir/src/safeSave.cpp.obj: CXX_COMPILER__safeSave_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/safeSave/src/safeSave.cpp || cmake_object_order_depends_target_safeSave
   DEP_FILE = thirdparty\safeSave\CMakeFiles\safeSave.dir\src\safeSave.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/safeSave/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/safeSave/include
   OBJECT_DIR = thirdparty\safeSave\CMakeFiles\safeSave.dir
   OBJECT_FILE_DIR = thirdparty\safeSave\CMakeFiles\safeSave.dir\src
+  TARGET_COMPILE_PDB = thirdparty\safeSave\CMakeFiles\safeSave.dir\safeSave.pdb
+  TARGET_PDB = thirdparty\safeSave\libsafeSave.pdb
 
 
 # =============================================================================
@@ -727,15 +796,16 @@ build thirdparty/safeSave/libsafeSave.a: CXX_STATIC_LIBRARY_LINKER__safeSave_Deb
   OBJECT_DIR = thirdparty\safeSave\CMakeFiles\safeSave.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = thirdparty\safeSave\CMakeFiles\safeSave.dir\safeSave.pdb
   TARGET_FILE = thirdparty\safeSave\libsafeSave.a
-  TARGET_PDB = safeSave.a.dbg
+  TARGET_PDB = thirdparty\safeSave\libsafeSave.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build thirdparty/safeSave/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\safeSave && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\safeSave && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -746,7 +816,7 @@ build thirdparty/safeSave/edit_cache: phony thirdparty/safeSave/CMakeFiles/edit_
 # Utility command for rebuild_cache
 
 build thirdparty/safeSave/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\safeSave && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\safeSave && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -755,7 +825,7 @@ build thirdparty/safeSave/rebuild_cache: phony thirdparty/safeSave/CMakeFiles/re
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 
@@ -763,7 +833,7 @@ build thirdparty/safeSave/rebuild_cache: phony thirdparty/safeSave/CMakeFiles/re
 # Utility command for edit_cache
 
 build thirdparty/profilerLib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\profilerLib && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\profilerLib && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -774,7 +844,7 @@ build thirdparty/profilerLib/edit_cache: phony thirdparty/profilerLib/CMakeFiles
 # Utility command for rebuild_cache
 
 build thirdparty/profilerLib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\profilerLib && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\profilerLib && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -783,7 +853,7 @@ build thirdparty/profilerLib/rebuild_cache: phony thirdparty/profilerLib/CMakeFi
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -795,19 +865,23 @@ build thirdparty/profilerLib/rebuild_cache: phony thirdparty/profilerLib/CMakeFi
 
 build cmake_object_order_depends_target_gl2d: phony || cmake_object_order_depends_target_glad cmake_object_order_depends_target_stb_image cmake_object_order_depends_target_stb_truetype
 
-build thirdparty/gl2d/CMakeFiles/gl2d.dir/src/gl2d.cpp.obj: CXX_COMPILER__gl2d_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/src/gl2d.cpp || cmake_object_order_depends_target_gl2d
+build thirdparty/gl2d/CMakeFiles/gl2d.dir/src/gl2d.cpp.obj: CXX_COMPILER__gl2d_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/src/gl2d.cpp || cmake_object_order_depends_target_gl2d
   DEP_FILE = thirdparty\gl2d\CMakeFiles\gl2d.dir\src\gl2d.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/include
   OBJECT_DIR = thirdparty\gl2d\CMakeFiles\gl2d.dir
   OBJECT_FILE_DIR = thirdparty\gl2d\CMakeFiles\gl2d.dir\src
+  TARGET_COMPILE_PDB = thirdparty\gl2d\CMakeFiles\gl2d.dir\gl2d.pdb
+  TARGET_PDB = thirdparty\gl2d\libgl2d.pdb
 
-build thirdparty/gl2d/CMakeFiles/gl2d.dir/src/gl2dParticleSystem.cpp.obj: CXX_COMPILER__gl2d_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/src/gl2dParticleSystem.cpp || cmake_object_order_depends_target_gl2d
+build thirdparty/gl2d/CMakeFiles/gl2d.dir/src/gl2dParticleSystem.cpp.obj: CXX_COMPILER__gl2d_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/src/gl2dParticleSystem.cpp || cmake_object_order_depends_target_gl2d
   DEP_FILE = thirdparty\gl2d\CMakeFiles\gl2d.dir\src\gl2dParticleSystem.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/include
   OBJECT_DIR = thirdparty\gl2d\CMakeFiles\gl2d.dir
   OBJECT_FILE_DIR = thirdparty\gl2d\CMakeFiles\gl2d.dir\src
+  TARGET_COMPILE_PDB = thirdparty\gl2d\CMakeFiles\gl2d.dir\gl2d.pdb
+  TARGET_PDB = thirdparty\gl2d\libgl2d.pdb
 
 
 # =============================================================================
@@ -822,15 +896,16 @@ build thirdparty/gl2d/libgl2d.a: CXX_STATIC_LIBRARY_LINKER__gl2d_Debug thirdpart
   OBJECT_DIR = thirdparty\gl2d\CMakeFiles\gl2d.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = thirdparty\gl2d\CMakeFiles\gl2d.dir\gl2d.pdb
   TARGET_FILE = thirdparty\gl2d\libgl2d.a
-  TARGET_PDB = gl2d.a.dbg
+  TARGET_PDB = thirdparty\gl2d\libgl2d.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build thirdparty/gl2d/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\gl2d && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\gl2d && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -841,7 +916,7 @@ build thirdparty/gl2d/edit_cache: phony thirdparty/gl2d/CMakeFiles/edit_cache.ut
 # Utility command for rebuild_cache
 
 build thirdparty/gl2d/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\gl2d && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\gl2d && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -850,7 +925,7 @@ build thirdparty/gl2d/rebuild_cache: phony thirdparty/gl2d/CMakeFiles/rebuild_ca
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt
+# C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -862,12 +937,14 @@ build thirdparty/gl2d/rebuild_cache: phony thirdparty/gl2d/CMakeFiles/rebuild_ca
 
 build cmake_object_order_depends_target_glui: phony || cmake_object_order_depends_target_gl2d cmake_object_order_depends_target_glad cmake_object_order_depends_target_stb_image cmake_object_order_depends_target_stb_truetype
 
-build thirdparty/glui/CMakeFiles/glui.dir/src/glui.cpp.obj: CXX_COMPILER__glui_unscanned_Debug C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glui/src/glui.cpp || cmake_object_order_depends_target_glui
+build thirdparty/glui/CMakeFiles/glui.dir/src/glui.cpp.obj: CXX_COMPILER__glui_unscanned_Debug C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glui/src/glui.cpp || cmake_object_order_depends_target_glui
   DEP_FILE = thirdparty\glui\CMakeFiles\glui.dir\src\glui.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -mfma
-  INCLUDES = -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glui/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/include -IC:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/include
+  INCLUDES = -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glui/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/include -IC:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/include
   OBJECT_DIR = thirdparty\glui\CMakeFiles\glui.dir
   OBJECT_FILE_DIR = thirdparty\glui\CMakeFiles\glui.dir\src
+  TARGET_COMPILE_PDB = thirdparty\glui\CMakeFiles\glui.dir\glui.pdb
+  TARGET_PDB = thirdparty\glui\libglui.pdb
 
 
 # =============================================================================
@@ -882,15 +959,16 @@ build thirdparty/glui/libglui.a: CXX_STATIC_LIBRARY_LINKER__glui_Debug thirdpart
   OBJECT_DIR = thirdparty\glui\CMakeFiles\glui.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = thirdparty\glui\CMakeFiles\glui.dir\glui.pdb
   TARGET_FILE = thirdparty\glui\libglui.a
-  TARGET_PDB = glui.a.dbg
+  TARGET_PDB = thirdparty\glui\libglui.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build thirdparty/glui/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\glui && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\glui && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -901,7 +979,7 @@ build thirdparty/glui/edit_cache: phony thirdparty/glui/CMakeFiles/edit_cache.ut
 # Utility command for rebuild_cache
 
 build thirdparty/glui/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug\thirdparty\glui && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57 -BC:\Users\Suspr\Downloads\game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57\cmake-build-debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug\thirdparty\glui && C:\Users\Suspr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia -BC:\Users\Suspr\Desktop\Curso24-25\2_Cuatrimestre\MULTIMEDIA\Practicas\ProyectoMultimedia\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -955,91 +1033,91 @@ build stb_truetype: phony thirdparty/stb_truetype/libstb_truetype.a
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug
 
 build all: phony spaceGame.exe thirdparty/glfw-3.3.2/all thirdparty/glad/all thirdparty/stb_image/all thirdparty/stb_truetype/all thirdparty/raudio/all thirdparty/glm/all thirdparty/imgui-docking/all thirdparty/safeSave/all thirdparty/profilerLib/all thirdparty/gl2d/all thirdparty/glui/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/gl2d
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/gl2d
 
 build thirdparty/gl2d/all: phony thirdparty/gl2d/libgl2d.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glad
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glad
 
 build thirdparty/glad/all: phony thirdparty/glad/libglad.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2
 
 build thirdparty/glfw-3.3.2/all: phony thirdparty/glfw-3.3.2/src/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glfw-3.3.2/src
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glfw-3.3.2/src
 
 build thirdparty/glfw-3.3.2/src/all: phony thirdparty/glfw-3.3.2/src/libglfw3.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glm
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glm
 
 build thirdparty/glm/all: phony
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/glui
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/glui
 
 build thirdparty/glui/all: phony thirdparty/glui/libglui.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/imgui-docking
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/imgui-docking
 
 build thirdparty/imgui-docking/all: phony thirdparty/imgui-docking/libimgui.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/profilerLib
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/profilerLib
 
 build thirdparty/profilerLib/all: phony
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/raudio
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/raudio
 
 build thirdparty/raudio/all: phony thirdparty/raudio/libraudio.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/safeSave
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/safeSave
 
 build thirdparty/safeSave/all: phony thirdparty/safeSave/libsafeSave.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/stb_image
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/stb_image
 
 build thirdparty/stb_image/all: phony thirdparty/stb_image/libstb_image.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/thirdparty/stb_truetype
+# Folder: C:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/thirdparty/stb_truetype
 
 build thirdparty/stb_truetype/all: phony thirdparty/stb_truetype/libstb_truetype.a
 
@@ -1050,13 +1128,13 @@ build thirdparty/stb_truetype/all: phony thirdparty/stb_truetype/libstb_truetype
 #############################################
 # Phony target to force glob verification run.
 
-build C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake_force: phony
+build C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake_force: phony
 
 
 #############################################
 # Re-run CMake to check if globbed directories changed.
 
-build C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/CMakeFiles/cmake.verify_globs: VERIFY_GLOBS | C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake_force
+build C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/CMakeFiles/cmake.verify_globs: VERIFY_GLOBS | C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake_force
   pool = console
   restat = 1
 
@@ -1064,14 +1142,14 @@ build C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/CMakeFiles/cmake.verify_globs | C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDependentOption.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckIncludeFile.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckLibraryExists.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindPackageMessage.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindThreads.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/glfw3.pc.in C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/glfw_config.h.in C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glui/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/profilerLib/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/raudio/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/safeSave/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeRCCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/CMakeFiles/cmake.verify_globs | C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompiler.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompiler.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCompilerIdDetection.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDependentOption.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerSupport.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineRCCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeFindBinUtils.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeParseLibraryArchitecture.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCCompiler.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystem.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCompilerCommon.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestRCCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckIncludeFile.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckLibraryExists.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/TIClang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindPackageMessage.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindThreads.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/FeatureTesting.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Determine-CXX.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/glfw3.pc.in C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/glfw_config.h.in C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glui/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/profilerLib/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/raudio/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/safeSave/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeRCCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDependentOption.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckIncludeFile.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckLibraryExists.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindPackageMessage.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindThreads.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/gl2d/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glad/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/glfw3.pc.in C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glfw-3.3.2/src/glfw_config.h.in C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glm/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/glui/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/imgui-docking/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/profilerLib/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/raudio/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/safeSave/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_image/CMakeLists.txt C$:/Users/Suspr/Downloads/game-in-cpp-full-course-6f51a211a626f1af1988946a25c162a612fa1f57/thirdparty/stb_truetype/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeRCCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake: phony
+build C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompiler.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompiler.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCompilerIdDetection.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDependentOption.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerSupport.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineRCCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeFindBinUtils.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeParseLibraryArchitecture.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCCompiler.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystem.cmake.in C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestCompilerCommon.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeTestRCCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckIncludeFile.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/CheckLibraryExists.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/TIClang-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindPackageMessage.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/FindThreads.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Internal/FeatureTesting.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Determine-CXX.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake C$:/Users/Suspr/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/gl2d/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glad/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/glfw3.pc.in C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/glfw3Config.cmake.in C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glfw-3.3.2/src/glfw_config.h.in C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glm/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/glui/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/imgui-docking/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/profilerLib/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/raudio/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/safeSave/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_image/CMakeLists.txt C$:/Users/Suspr/Desktop/Curso24-25/2_Cuatrimestre/MULTIMEDIA/Practicas/ProyectoMultimedia/thirdparty/stb_truetype/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeCXXCompiler.cmake CMakeFiles/3.30.5/CMakeRCCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake: phony
 
 
 #############################################
