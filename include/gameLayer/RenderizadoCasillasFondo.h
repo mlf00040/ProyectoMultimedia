@@ -8,6 +8,7 @@ struct RenderizadoCasillas{
 
     float tamanioFondo = 4096;
     gl2d::Texture fondo;
+    float fuerzaDistorsion = 1;
 
     void render (gl2d::Renderer2D &renderer);
 };

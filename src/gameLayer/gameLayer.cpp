@@ -25,9 +25,10 @@ struct DatosJuego{
 #pragma region inicializacion de texturas
 gl2d::Renderer2D renderer;
 gl2d::Texture texturaNavePrincipal;
-gl2d::Texture texturaFondo;
+constexpr int CAPASFONDO = 4;
+gl2d::Texture texturaFondo[CAPASFONDO];
 
-RenderizadoCasillas generadorCasillas;
+RenderizadoCasillas generadorCasillas[CAPASFONDO];
 #pragma endregion
 
 bool initGame()
@@ -41,13 +42,41 @@ bool initGame()
     } else {
         texturaNavePrincipal.loadFromFile(RESOURCES_PATH"spaceShip/ships/green.png", true);
     }
-    if (!std::filesystem::exists(RESOURCES_PATH"space/Fondo.png")) {
-        std::cerr << "Error: No se encontró la imagen de la nave Jugador "<< std::endl;
+    if (!std::filesystem::exists(RESOURCES_PATH"space/FondoTrozo1.png")) {
+        std::cerr << "Error: No se encontró un componente del fondo "<< std::endl;
     } else {
-        texturaFondo.loadFromFile(RESOURCES_PATH"space/Fondo.png", true);
+        texturaFondo[0].loadFromFile(RESOURCES_PATH"space/FondoTrozo1.png", true);
     }
 
-    generadorCasillas.fondo = texturaFondo;
+    if (!std::filesystem::exists(RESOURCES_PATH"space/FondoTrozo2.png")) {
+        std::cerr << "Error: No se encontró un componente del fondo "<< std::endl;
+    } else {
+        texturaFondo[1].loadFromFile(RESOURCES_PATH"space/FondoTrozo2.png", true);
+    }
+
+    if (!std::filesystem::exists(RESOURCES_PATH"space/FondoTrozo3.png")) {
+        std::cerr << "Error: No se encontró un componente del fondo "<< std::endl;
+    } else {
+        texturaFondo[2].loadFromFile(RESOURCES_PATH"space/FondoTrozo3.png", true);
+    }
+
+    if (!std::filesystem::exists(RESOURCES_PATH"space/FondoTrozo4.png")) {
+        std::cerr << "Error: No se encontró un componente del fondo "<< std::endl;
+    } else {
+        texturaFondo[3].loadFromFile(RESOURCES_PATH"space/FondoTrozo4.png", true);
+    }
+
+
+    generadorCasillas[0].fondo = texturaFondo[0];
+    generadorCasillas[1].fondo = texturaFondo[1];
+    generadorCasillas[2].fondo = texturaFondo[2];
+    generadorCasillas[3].fondo = texturaFondo[3];
+
+    generadorCasillas[0].fuerzaDistorsion = 0;
+    generadorCasillas[1].fuerzaDistorsion = 0.25;
+    generadorCasillas[2].fuerzaDistorsion = 0.5;
+    generadorCasillas[3].fuerzaDistorsion = 0.75;
+
 
 	return true;
 }
@@ -102,7 +131,9 @@ bool gameLogic(float deltaTime)
 
 #pragma region Texturas del fondo
 
-    generadorCasillas.render(renderer);
+    for(int i=0; i< CAPASFONDO;i++){
+        generadorCasillas[i].render(renderer);
+    }
 
 #pragma endregion
 
