@@ -62,10 +62,8 @@ bool gameLogic(float deltaTime)
 	renderer.updateWindowMetrics(w, h);
 #pragma endregion
 
-#pragma region Texturas del fondo
-    renderer.renderRectangle({0,0 , 1800, 1800}, texturaFondo);
 
-#pragma endregion
+
 #pragma region movimiento
     glm::vec2 movimiento = {};
 
@@ -97,7 +95,17 @@ bool gameLogic(float deltaTime)
     }
 #pragma endregion
 
-    renderer.renderRectangle({datosJuego.playerPos , 100, 100}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
+#pragma region Texturas del fondo
+
+    renderer.renderRectangle({0,0 , 1800, 1800}, texturaFondo);
+
+#pragma endregion
+
+    float tamanioNave = 100.0f;
+
+    renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h);
+
+    renderer.renderRectangle({datosJuego.playerPos- glm::vec2(tamanioNave/2,tamanioNave/2),  100, 100}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
 
 
 
