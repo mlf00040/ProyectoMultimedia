@@ -24,6 +24,7 @@ struct DatosJuego{
 #pragma region inicializacion de texturas
 gl2d::Renderer2D renderer;
 gl2d::Texture texturaNavePrincipal;
+gl2d::Texture texturaFondo;
 #pragma endregion
 
 bool initGame()
@@ -36,6 +37,11 @@ bool initGame()
         std::cerr << "Error: No se encontró la imagen de la nave Jugador "<< std::endl;
     } else {
         texturaNavePrincipal.loadFromFile(RESOURCES_PATH"spaceShip/ships/green.png", true);
+    }
+    if (!std::filesystem::exists(RESOURCES_PATH"space/Fondo.png")) {
+        std::cerr << "Error: No se encontró la imagen de la nave Jugador "<< std::endl;
+    } else {
+        texturaFondo.loadFromFile(RESOURCES_PATH"space/Fondo.png", true);
     }
 	
 	return true;
@@ -56,6 +62,10 @@ bool gameLogic(float deltaTime)
 	renderer.updateWindowMetrics(w, h);
 #pragma endregion
 
+#pragma region Texturas del fondo
+    renderer.renderRectangle({0,0 , 1800, 1800}, texturaFondo);
+
+#pragma endregion
 #pragma region movimiento
     glm::vec2 movimiento = {};
 
