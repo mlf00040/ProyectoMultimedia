@@ -11,6 +11,7 @@
 #include <gl2d/gl2d.h>
 #include <platformTools.h>
 #include <filesystem>
+#include <RenderizadoCasillasFondo.h>
 
 
 
@@ -25,6 +26,8 @@ struct DatosJuego{
 gl2d::Renderer2D renderer;
 gl2d::Texture texturaNavePrincipal;
 gl2d::Texture texturaFondo;
+
+RenderizadoCasillas generadorCasillas;
 #pragma endregion
 
 bool initGame()
@@ -43,7 +46,9 @@ bool initGame()
     } else {
         texturaFondo.loadFromFile(RESOURCES_PATH"space/Fondo.png", true);
     }
-	
+
+    generadorCasillas.fondo = texturaFondo;
+
 	return true;
 }
 
@@ -97,7 +102,7 @@ bool gameLogic(float deltaTime)
 
 #pragma region Texturas del fondo
 
-    renderer.renderRectangle({0,0 , 1800, 1800}, texturaFondo);
+    generadorCasillas.render(renderer);
 
 #pragma endregion
 
