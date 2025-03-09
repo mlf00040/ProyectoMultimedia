@@ -12,6 +12,8 @@
 #include <platformTools.h>
 #include <filesystem>
 #include <RenderizadoCasillasFondo.h>
+#include <balas.h>
+#include <vector>
 
 
 
@@ -20,6 +22,9 @@ struct DatosJuego{
     glm::vec2 playerPos = {100,100};
     float direccionGiro = -90.0f;
 
+    std::vector<Balas> VBalas;
+
+
 }datosJuego;
 
 #pragma region inicializacion de texturas
@@ -27,6 +32,9 @@ gl2d::Renderer2D renderer;
 gl2d::Texture texturaNavePrincipal;
 constexpr int CAPASFONDO = 4;
 gl2d::Texture texturaFondo[CAPASFONDO];
+
+gl2d::Texture bala1;
+gl2d::TextureAtlasPadding atlasBalas;
 
 RenderizadoCasillas generadorCasillas[CAPASFONDO];
 #pragma endregion
@@ -37,6 +45,8 @@ bool initGame()
 	gl2d::init();
 	renderer.create();
 
+
+#pragma region comprobacion de archivos y carga de texturas
     if (!std::filesystem::exists(RESOURCES_PATH"spaceShip/ships/green.png")) {
         std::cerr << "Error: No se encontró la imagen de la nave Jugador "<< std::endl;
     } else {
@@ -66,6 +76,15 @@ bool initGame()
         texturaFondo[3].loadFromFile(RESOURCES_PATH"space/FondoTrozo4.png", true);
     }
 
+    if (!std::filesystem::exists(RESOURCES_PATH"spaceShip/stitchedFiles/projectiles.png")) {
+        std::cerr << "Error: No se encontró el archivo de proyectiles "<< std::endl;
+    } else {
+        bala1.loadFromFileWithPixelPadding
+        (RESOURCES_PATH"spaceShip/stitchedFiles/projectiles.png",500, true);
+        atlasBalas= gl2d::TextureAtlasPadding(3,2, bala1.GetSize().x,bala1.GetSize().y);
+    }
+
+#pragma endregion
 
     generadorCasillas[0].fondo = texturaFondo[0];
     generadorCasillas[1].fondo = texturaFondo[1];
@@ -95,8 +114,6 @@ bool gameLogic(float deltaTime)
 
 	renderer.updateWindowMetrics(w, h);
 #pragma endregion
-
-
 
 #pragma region movimiento
     glm::vec2 movimiento = {};
@@ -137,11 +154,32 @@ bool gameLogic(float deltaTime)
 
 #pragma endregion
 
-    float tamanioNave = 100.0f;
+#pragma region manejar balas
+//habra que adaptar esto a una utilizacion por tiempo y parametro
+
+    if(platform::isLMousePressed()){
+        Balas b;
+
+        b.position = datosJuego.playerPos;
+        b.direccion = glm::vec2{90,90} ;
+        //esto va a haber que cambiarlo
+
+
+        datosJuego.VBalas.push_back(b);
+    }
+
+    for(auto &b : datosJuego.VBalas){
+        b.render(renderer,bala1,atlasBalas);
+    }
+
+
+#pragma endregion
+
+    float tamanioNave = 64.0f;
 
     renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h);
 
-    renderer.renderRectangle({datosJuego.playerPos- glm::vec2(tamanioNave/2,tamanioNave/2),  100, 100}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
+    renderer.renderRectangle({datosJuego.playerPos- glm::vec2(tamanioNave/2,tamanioNave/2),  64, 64}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
 
 
 
