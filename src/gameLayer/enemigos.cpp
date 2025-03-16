@@ -7,9 +7,10 @@
 
 void Enemigo::render(gl2d::Renderer2D &renderer, gl2d::Texture texturaEnemigo, gl2d::TextureAtlasPadding atlasEnemigos,glm::vec2 tipo,glm::vec2 posJugador) {
 
-    glm::vec4 rect = {posicion.x, posicion.y, 64, 64}; // Tamaño de los enemigos
-    glm::vec2 dirNormalizado = glm::normalize(posJugador);
-    renderer.renderRectangle(rect, texturaEnemigo, Colors_White,{},glm::degrees(atan2(dirNormalizado.y, dirNormalizado.x)),atlasEnemigos.get(tipo.x,tipo.y));
+    glm::vec4 rect = {posicion.x-(64/2), posicion.y-(64/2), 64, 64}; // Tamaño de los enemigos
+    glm::vec2 dir = posJugador - posicion;
+    glm::vec2 dirNormalizado = glm::normalize(dir);
+    renderer.renderRectangle(rect, texturaEnemigo, Colors_White,{},glm::degrees(atan2(-dirNormalizado.y, dirNormalizado.x))-90.0f,atlasEnemigos.get(tipo.x,tipo.y));
 }
 
 void Enemigo::movimiento(float deltaTime, glm::vec2 posicionJugador) {
@@ -26,7 +27,7 @@ void Enemigo::movimiento(float deltaTime, glm::vec2 posicionJugador) {
     if(glm::length(nuevaDireccion) == 0){
         nuevaDireccion = glm::vec2 (direccionAlJugador.y,-direccionAlJugador.x);
     }else{
-        nuevaDireccion= deltaTime * 3.0f * direccionAlJugador + direccion;
+        nuevaDireccion= deltaTime * 5.0f * direccionAlJugador + direccion;
     }
     nuevaDireccion = glm::normalize(nuevaDireccion);
 

@@ -153,7 +153,7 @@ bool gameLogic(float deltaTime)
     if(movimiento.x !=0 || movimiento.y !=0){
 
         movimiento = glm::normalize(movimiento);
-        movimiento *= deltaTime * 400;
+        movimiento *= deltaTime * 300;
         datosJuego.playerPos += movimiento;
 
         //Rotacion del personaje
@@ -248,7 +248,7 @@ bool gameLogic(float deltaTime)
         Enemigo e;
         e.setPosicion(datosJuego.playerPos);
         e.setTipo({1,0});
-        e.setVelocidad(500);
+        e.setVelocidad(350);
 
         datosJuego.VEnemigos.push_back(e);
     }
