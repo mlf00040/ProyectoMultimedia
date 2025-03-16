@@ -84,7 +84,7 @@ bool initGame()
         atlasBalas= gl2d::TextureAtlasPadding(3,2, bala1.GetSize().x,bala1.GetSize().y);
     }
 
-#pragma endregion
+
 
     generadorCasillas[0].fondo = texturaFondo[0];
     generadorCasillas[1].fondo = texturaFondo[1];
@@ -96,6 +96,7 @@ bool initGame()
     generadorCasillas[2].fuerzaDistorsion = 0.5;
     generadorCasillas[3].fuerzaDistorsion = 0.75;
 
+#pragma endregion
 
 	return true;
 }
@@ -146,6 +147,27 @@ bool gameLogic(float deltaTime)
     }
 #pragma endregion
 
+#pragma region manejar balas
+//habra que adaptar esto a una utilizacion por tiempo y parametro
+
+    if(platform::isLMousePressed()){
+        Balas b;
+
+        b.setPosition(datosJuego.playerPos);
+        b.setDireccion(glm::vec2{0,90});
+        //esto va a haber que cambiarlo
+
+
+        datosJuego.VBalas.push_back(b);
+    }
+
+    for(auto &b : datosJuego.VBalas){
+        b.movimiento(deltaTime);
+    }
+
+
+#pragma endregion
+
 #pragma region Texturas del fondo
 
     for(int i=0; i< CAPASFONDO;i++){
@@ -154,25 +176,10 @@ bool gameLogic(float deltaTime)
 
 #pragma endregion
 
-#pragma region manejar balas
-//habra que adaptar esto a una utilizacion por tiempo y parametro
-
-    if(platform::isLMousePressed()){
-        Balas b;
-
-        b.position = datosJuego.playerPos;
-        b.direccion = glm::vec2{90,90} ;
-        //esto va a haber que cambiarlo
-
-
-        datosJuego.VBalas.push_back(b);
-    }
-
+#pragma region Renderizado de balas
     for(auto &b : datosJuego.VBalas){
         b.render(renderer,bala1,atlasBalas);
     }
-
-
 #pragma endregion
 
     float tamanioNave = 64.0f;
