@@ -13,6 +13,8 @@ class Balas{
     glm::vec2 position = {};
     glm::vec2 direccion = {};
 
+    float danio=0;
+
 public:
 
     void render(gl2d::Renderer2D &renderer,

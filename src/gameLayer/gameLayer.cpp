@@ -13,6 +13,7 @@
 #include <filesystem>
 #include <RenderizadoCasillasFondo.h>
 #include <balas.h>
+#include <enemigos.h>
 #include <vector>
 
 
@@ -23,11 +24,13 @@ struct DatosJuego{
     float direccionGiro = -90.0f;
 
     std::vector<Balas> VBalas;
+    std::vector<Enemigo> VEnemigos;
 
 
 }datosJuego;
 
 #pragma region inicializacion de texturas
+
 gl2d::Renderer2D renderer;
 gl2d::Texture texturaNavePrincipal;
 constexpr int CAPASFONDO = 4;
@@ -36,7 +39,11 @@ gl2d::Texture texturaFondo[CAPASFONDO];
 gl2d::Texture bala1;
 gl2d::TextureAtlasPadding atlasBalas;
 
+gl2d::Texture enemigo1;
+gl2d::TextureAtlasPadding atlasEnemigos;
+
 RenderizadoCasillas generadorCasillas[CAPASFONDO];
+
 #pragma endregion
 
 bool initGame()
@@ -47,6 +54,7 @@ bool initGame()
 
 
 #pragma region comprobacion de archivos y carga de texturas
+
     if (!std::filesystem::exists(RESOURCES_PATH"spaceShip/ships/green.png")) {
         std::cerr << "Error: No se encontró la imagen de la nave Jugador "<< std::endl;
     } else {
@@ -82,6 +90,14 @@ bool initGame()
         bala1.loadFromFileWithPixelPadding
         (RESOURCES_PATH"spaceShip/stitchedFiles/projectiles.png",500, true);
         atlasBalas= gl2d::TextureAtlasPadding(3,2, bala1.GetSize().x,bala1.GetSize().y);
+    }
+
+    if (!std::filesystem::exists(RESOURCES_PATH"spaceShip/ships/newShips.png")) {
+        std::cerr << "Error: No se encontró el archivo de enemigos "<< std::endl;
+    } else {
+        enemigo1.loadFromFileWithPixelPadding
+                (RESOURCES_PATH"spaceShip/ships/newShips.png",16, true);
+        atlasEnemigos= gl2d::TextureAtlasPadding(2,1, bala1.GetSize().x,bala1.GetSize().y);
     }
 
 
@@ -147,9 +163,33 @@ bool gameLogic(float deltaTime)
     }
 #pragma endregion
 
+#pragma region Texturas del fondo
+
+    for(int i=0; i< CAPASFONDO;i++){
+        generadorCasillas[i].render(renderer);
+    }
+
+#pragma endregion
+
+#pragma region manejo de enemigos
+
+    //actualiza el movimiento de los enemigos
+    for(auto &e : datosJuego.VEnemigos){
+        e.movimiento(deltaTime,datosJuego.playerPos);
+    }
+
+#pragma endregion
+
+#pragma region renderizado enemigos
+    for(auto &e : datosJuego.VEnemigos){
+        e.render(renderer,enemigo1,atlasEnemigos,glm::vec2(1,0),datosJuego.playerPos);
+    }
+#pragma endregion
+
 #pragma region manejar balas
 //habra que adaptar esto a una utilizacion por tiempo y parametro
 
+    //todo esto despues hay que ponerle un timer y quitar el raton.
     if(platform::isLMousePressed()){
         Balas b;
 
@@ -161,17 +201,19 @@ bool gameLogic(float deltaTime)
         datosJuego.VBalas.push_back(b);
     }
 
+    //actualiza el movimiento de las balas
     for(auto &b : datosJuego.VBalas){
         b.movimiento(deltaTime);
     }
 
+    //borrar las balas fuera de la pantalla
+    for(int i=0;i<datosJuego.VBalas.size();i++){
 
-#pragma endregion
-
-#pragma region Texturas del fondo
-
-    for(int i=0; i< CAPASFONDO;i++){
-        generadorCasillas[i].render(renderer);
+        if(glm::distance(datosJuego.VBalas[i].getPosition(),datosJuego.playerPos)>1'000){
+            datosJuego.VBalas.erase(datosJuego.VBalas.begin()+i);
+            i--;
+            continue;
+        }
     }
 
 #pragma endregion
@@ -195,6 +237,23 @@ bool gameLogic(float deltaTime)
 
 	//ImGui::ShowDemoWindow();
 
+#pragma region Debug dentro del juego
+
+    ImGui::Begin("debug");
+
+    ImGui::Text("numero balas:  %d",(int)datosJuego.VBalas.size());
+    ImGui::Text("numero enemigos: %d",(int)datosJuego.VEnemigos.size());
+
+    if(ImGui::Button("Spawn enemigo")){
+        Enemigo e;
+        e.setPosicion(datosJuego.playerPos);
+        e.setTipo({1,0});
+        e.setVelocidad(500);
+
+        datosJuego.VEnemigos.push_back(e);
+    }
+
+    ImGui::End();
 
 	return true;
 #pragma endregion
