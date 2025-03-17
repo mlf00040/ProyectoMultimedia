@@ -1,0 +1,36 @@
+//
+// Created by Suspr on 17/03/2025.
+//
+
+#include <limits>
+#include <glm/glm.hpp>
+#include <metodosAuxiliares.h>
+
+glm::vec2 calculaPosEnemigoMasCercano(const std::vector<Enemigo> &vEnemigos, const glm::vec2 &posJugador) {
+
+    // Verificar si hay enemigos
+    if (vEnemigos.empty()) {
+
+        return glm::vec2(-1, -1);
+    }
+
+    float distanciaMinimaAlCuadrado = std::numeric_limits<float>::max();
+    glm::vec2 posicionEnemigoMasCercano;
+
+    for (const Enemigo &enemigo : vEnemigos) {
+        const glm::vec2 &posEnemigo = enemigo.getPosicion();
+
+        float disX = posEnemigo.x - posJugador.x;
+        float disY = posEnemigo.y - posJugador.y;
+
+        //se calcula la distancia al cuadrado porque es mas eficiente y no hay que usar el sqrt
+        float distanciaAlCuadrado = disX * disX + disY * disY;
+
+        if (distanciaAlCuadrado < distanciaMinimaAlCuadrado) {
+            distanciaMinimaAlCuadrado = distanciaAlCuadrado;
+            posicionEnemigoMasCercano = posEnemigo;
+        }
+    }
+    return posicionEnemigoMasCercano;
+}
+

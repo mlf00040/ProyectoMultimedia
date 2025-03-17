@@ -15,6 +15,7 @@
 #include <balas.h>
 #include <enemigos.h>
 #include <vector>
+#include <metodosAuxiliares.h>
 
 
 
@@ -22,6 +23,7 @@ struct DatosJuego{
 
     glm::vec2 playerPos = {100,100};
     float direccionGiro = -90.0f;
+    float tamanioNave = 64.0f;
 
     std::vector<Balas> VBalas;
     std::vector<Enemigo> VEnemigos;
@@ -187,14 +189,23 @@ bool gameLogic(float deltaTime)
 #pragma endregion
 
 #pragma region manejar balas
-//habra que adaptar esto a una utilizacion por tiempo y parametro
 
+//habra que adaptar esto a una utilizacion por tiempo y parametro
     //todo esto despues hay que ponerle un timer y quitar el raton.
     if(platform::isLMousePressed()){
         Balas b;
+        //para medio centrar las balas
+        glm::vec2 centroJugador={datosJuego.playerPos.x-datosJuego.tamanioNave/2,
+                  datosJuego.playerPos.y-datosJuego.tamanioNave/2};
 
-        b.setPosition(datosJuego.playerPos);
-        b.setDireccion(glm::vec2{0,90});
+        b.setPosition(centroJugador);
+
+        glm::vec2 posEnemigoMasCercano = calculaPosEnemigoMasCercano(datosJuego.VEnemigos, centroJugador);
+        glm::vec2 direccion = posEnemigoMasCercano - centroJugador;
+        if (glm::length(direccion) > 0) {
+            direccion = glm::normalize(direccion);
+        }
+        b.setDireccion(direccion);
         //esto va a haber que cambiarlo
 
 
@@ -224,11 +235,11 @@ bool gameLogic(float deltaTime)
     }
 #pragma endregion
 
-    float tamanioNave = 64.0f;
+
 
     renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h);
 
-    renderer.renderRectangle({datosJuego.playerPos- glm::vec2(tamanioNave/2,tamanioNave/2),  64, 64}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
+    renderer.renderRectangle({datosJuego.playerPos- glm::vec2(datosJuego.tamanioNave/2,datosJuego.tamanioNave/2),  64, 64}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
 
 
 

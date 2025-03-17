@@ -14,6 +14,7 @@ class Balas{
     glm::vec2 direccion = {};
 
     float danio=0;
+    float velocidad=400;
 
 public:
 
@@ -30,6 +31,14 @@ public:
     const glm::vec2 &getDireccion() const;
 
     void setDireccion(const glm::vec2 &direccion);
+
+    float getDanio() const;
+
+    void setDanio(float danio);
+
+    float getVelocidad() const;
+
+    void setVelocidad(float velocidad);
 };
 
 #endif //SPACEGAME_BALAS_H
