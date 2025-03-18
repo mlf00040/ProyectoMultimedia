@@ -8,7 +8,7 @@
 
 glm::vec2 calculaPosEnemigoMasCercano(const std::vector<Enemigo> &vEnemigos, const glm::vec2 &posJugador) {
 
-    // Verificar si hay enemigos
+    //verificar si hay enemigos
     if (vEnemigos.empty()) {
 
         return glm::vec2(-1, -1);

@@ -16,6 +16,7 @@
 #include <enemigos.h>
 #include <vector>
 #include <metodosAuxiliares.h>
+#include <raudio.h>
 
 
 
@@ -46,7 +47,13 @@ gl2d::TextureAtlasPadding atlasEnemigos;
 
 RenderizadoCasillas generadorCasillas[CAPASFONDO];
 
+Sound sonidoDisparo;
+
 #pragma endregion
+
+void reiniciarJuego(){
+    datosJuego={};
+}
 
 bool initGame()
 {
@@ -102,8 +109,6 @@ bool initGame()
         atlasEnemigos= gl2d::TextureAtlasPadding(2,1, bala1.GetSize().x,bala1.GetSize().y);
     }
 
-
-
     generadorCasillas[0].fondo = texturaFondo[0];
     generadorCasillas[1].fondo = texturaFondo[1];
     generadorCasillas[2].fondo = texturaFondo[2];
@@ -113,6 +118,13 @@ bool initGame()
     generadorCasillas[1].fuerzaDistorsion = 0.25;
     generadorCasillas[2].fuerzaDistorsion = 0.5;
     generadorCasillas[3].fuerzaDistorsion = 0.75;
+
+#pragma endregion
+
+#pragma region sonido
+
+    sonidoDisparo = LoadSound(RESOURCES_PATH"sonidos/Disparo1.wav");
+    SetSoundVolume(sonidoDisparo,0.2);
 
 #pragma endregion
 
@@ -193,6 +205,9 @@ bool gameLogic(float deltaTime)
 //habra que adaptar esto a una utilizacion por tiempo y parametro
     //todo esto despues hay que ponerle un timer y quitar el raton.
     if(platform::isLMousePressed()){
+        if(!IsSoundPlaying(sonidoDisparo)){
+            PlaySound(sonidoDisparo);
+        }
         Balas b;
         //para medio centrar las balas
         glm::vec2 centroJugador={datosJuego.playerPos.x-datosJuego.tamanioNave/2,
@@ -237,7 +252,7 @@ bool gameLogic(float deltaTime)
 
 
 
-    renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h);
+    renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h); //300 es la velocidad de la camara
 
     renderer.renderRectangle({datosJuego.playerPos- glm::vec2(datosJuego.tamanioNave/2,datosJuego.tamanioNave/2),  64, 64}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
 
@@ -251,9 +266,10 @@ bool gameLogic(float deltaTime)
 #pragma region Debug dentro del juego
 
     ImGui::Begin("debug");
-
+    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
     ImGui::Text("numero balas:  %d",(int)datosJuego.VBalas.size());
     ImGui::Text("numero enemigos: %d",(int)datosJuego.VEnemigos.size());
+    ImGui::PopStyleColor();
 
     if(ImGui::Button("Spawn enemigo")){
         Enemigo e;
@@ -262,6 +278,10 @@ bool gameLogic(float deltaTime)
         e.setVelocidad(350);
 
         datosJuego.VEnemigos.push_back(e);
+    }
+
+    if(ImGui::Button("reiniciar juego")){
+        reiniciarJuego();
     }
 
     ImGui::End();
