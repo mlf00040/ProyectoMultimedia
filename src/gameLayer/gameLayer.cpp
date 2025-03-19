@@ -29,6 +29,9 @@ struct DatosJuego{
     std::vector<Balas> VBalas;
     std::vector<Enemigo> VEnemigos;
 
+    float volumenGeneral = 1;
+    float volumenMusica = 0.05;
+    float volumenFX = 0.2;
 
 }datosJuego;
 
@@ -48,11 +51,13 @@ gl2d::TextureAtlasPadding atlasEnemigos;
 RenderizadoCasillas generadorCasillas[CAPASFONDO];
 
 Sound sonidoDisparo;
+Sound musicaFondo;
 
 #pragma endregion
 
 void reiniciarJuego(){
     datosJuego={};
+    StopSound(musicaFondo);
 }
 
 bool initGame()
@@ -124,7 +129,10 @@ bool initGame()
 #pragma region sonido
 
     sonidoDisparo = LoadSound(RESOURCES_PATH"sonidos/Disparo1.wav");
-    SetSoundVolume(sonidoDisparo,0.2);
+    SetSoundVolume(sonidoDisparo,datosJuego.volumenFX*datosJuego.volumenGeneral);
+
+    musicaFondo = LoadSound(RESOURCES_PATH"sonidos/MusicaDelJuegoProvisional.wav");
+    SetSoundVolume(musicaFondo,datosJuego.volumenMusica*datosJuego.volumenGeneral);
 
 #pragma endregion
 
@@ -144,6 +152,10 @@ bool gameLogic(float deltaTime)
 	glClear(GL_COLOR_BUFFER_BIT); //clear screen
 
 	renderer.updateWindowMetrics(w, h);
+
+    if(!IsSoundPlaying(musicaFondo)){
+        PlaySound(musicaFondo);
+    }
 #pragma endregion
 
 #pragma region movimiento
@@ -322,6 +334,65 @@ bool gameLogic(float deltaTime)
     }
 
     ImGui::End();
+#pragma region controladoresAudio
+
+    //todo falta añadir que nose pueda pasar de un valor negativo
+    ImGui::Begin("Audio Debug");
+
+    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.5f, 1.0f, 1.0f, 1.0f));
+    if(ImGui::Button("Mutear juego")){
+        datosJuego.volumenGeneral=0;
+        SetSoundVolume(sonidoDisparo,datosJuego.volumenFX*datosJuego.volumenGeneral);
+        SetSoundVolume(musicaFondo,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+    }
+    if(ImGui::Button("Mutear Musica")){
+        datosJuego.volumenMusica=0;
+        SetSoundVolume(musicaFondo,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+    }
+    if(ImGui::Button("Mutear Fx")){
+        datosJuego.volumenFX=0;
+        SetSoundVolume(sonidoDisparo,datosJuego.volumenFX*datosJuego.volumenGeneral);
+    }
+    ImGui::PopStyleColor();
+
+    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 1.0f, 0.0f, 1.0f));
+    if(ImGui::Button("Subir Volumen juego")){
+        datosJuego.volumenGeneral+=0.05;
+        SetSoundVolume(sonidoDisparo,datosJuego.volumenFX*datosJuego.volumenGeneral);
+        SetSoundVolume(musicaFondo,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+    }
+    if(ImGui::Button("Subir Volumen Musica")){
+        datosJuego.volumenMusica+=0.01;
+        SetSoundVolume(musicaFondo,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+    }
+    if(ImGui::Button("Subir Volumen Fx")){
+        datosJuego.volumenFX+=0.05;
+        SetSoundVolume(sonidoDisparo,datosJuego.volumenFX*datosJuego.volumenGeneral);
+    }
+    ImGui::PopStyleColor();
+
+    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
+    if(ImGui::Button("Bajar Volumen juego")){
+        datosJuego.volumenGeneral-=0.05;
+        SetSoundVolume(sonidoDisparo,datosJuego.volumenFX*datosJuego.volumenGeneral);
+        SetSoundVolume(musicaFondo,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+    }
+    if(ImGui::Button("Bajar Volumen Musica")){
+        datosJuego.volumenMusica-=0.01;
+        SetSoundVolume(musicaFondo,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+    }
+    if(ImGui::Button("Bajar Volumen Fx")){
+        datosJuego.volumenFX-=0.05;
+        SetSoundVolume(sonidoDisparo,datosJuego.volumenFX*datosJuego.volumenGeneral);
+    }
+    ImGui::PopStyleColor();
+    ImGui::Text("Volumen General:  %f",(float)datosJuego.volumenGeneral);
+    ImGui::Text("Volumen Musica: %f",(float)datosJuego.volumenMusica);
+    ImGui::Text("Volumen FX: %f",(float)datosJuego.volumenFX);
+
+    ImGui::End();
+#pragma endregion
+
 
 	return true;
 #pragma endregion
