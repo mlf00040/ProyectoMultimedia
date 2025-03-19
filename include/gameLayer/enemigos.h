@@ -16,6 +16,7 @@ class Enemigo{
 
     float vida=0;
     float velocidad;
+    float tamanio=64;
 
 public:
 
@@ -46,6 +47,10 @@ public:
     float getVelocidad() const;
 
     void setVelocidad(float velocidad);
+
+    float getTamanio() const;
+
+    void setTamanio(float tamanio);
 };
 
 #endif //SPACEGAME_ENEMIGOS_H

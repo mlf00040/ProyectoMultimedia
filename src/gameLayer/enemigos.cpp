@@ -76,3 +76,11 @@ float Enemigo::getVelocidad() const {
 void Enemigo::setVelocidad(float velocidad) {
     Enemigo::velocidad = velocidad;
 }
+
+float Enemigo::getTamanio() const {
+    return tamanio;
+}
+
+void Enemigo::setTamanio(float tamanio) {
+    Enemigo::tamanio = tamanio;
+}
