@@ -35,7 +35,7 @@ glm::vec2 calculaPosEnemigoMasCercano(const std::vector<Enemigo> &vEnemigos, con
 }
 
 bool impactoBala(const glm::vec2 &posBala,const glm::vec2 &posNave,const float tamanioNave){
-    if(glm::distance(posBala,posNave)<= tamanioNave){
+    if(glm::distance(posBala,posNave-tamanioNave/2)<= tamanioNave/2){
         return true;
     }else{
         return false;

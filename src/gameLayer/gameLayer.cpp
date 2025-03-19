@@ -256,14 +256,17 @@ bool gameLogic(float deltaTime)
         for(int e=0;e<datosJuego.VEnemigos.size();e++){
 
             if(impactoBala(datosJuego.VBalas[i].getPosition(),datosJuego.VEnemigos[e].getPosicion(),datosJuego.VEnemigos[e].getTamanio())){
+                //actualizar la vida del enemigo
                 datosJuego.VEnemigos[e].setVida(datosJuego.VEnemigos[e].getVida()-datosJuego.VBalas[i].getDanio());
+                //quitamos la bala
+                datosJuego.VBalas.erase(datosJuego.VBalas.begin()+i);
+                i--;
                 if( datosJuego.VEnemigos[e].getVida() <= 0){
-                    //quitamos la bala y el enemigo (lo suyo seria llamar a una mini animacion de explosion y soltar chatarra espacial)
+                    //quitamos el enemigo (lo suyo seria llamar a una mini animacion de explosion y soltar chatarra espacial)
                     datosJuego.VEnemigos.erase(datosJuego.VEnemigos.begin()+e);
                     e--;
-                    datosJuego.VBalas.erase(datosJuego.VBalas.begin()+i);
-                    i--;
-                    continue;
+
+                    break;
                 }
             }
         }
@@ -298,6 +301,10 @@ bool gameLogic(float deltaTime)
     ImGui::Text("numero balas:  %d",(int)datosJuego.VBalas.size());
     ImGui::Text("numero enemigos: %d",(int)datosJuego.VEnemigos.size());
     ImGui::PopStyleColor();
+
+    if(datosJuego.VEnemigos.size()>=1){
+        ImGui::Text("vida Enemigo: %d",(int)datosJuego.VEnemigos[0].getVida());
+    }
 
     if(ImGui::Button("Spawn enemigo")){
         Enemigo e;
