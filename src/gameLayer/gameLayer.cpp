@@ -17,6 +17,7 @@
 #include <vector>
 #include <metodosAuxiliares.h>
 #include <raudio.h>
+#include <glui/glui.h>
 
 
 
@@ -52,6 +53,12 @@ RenderizadoCasillas generadorCasillas[CAPASFONDO];
 
 Sound sonidoDisparo;
 Sound musicaFondo;
+
+glui::RendererUi UIrenderer;
+
+bool isGame=false;
+
+gl2d::Font fuenteMenu;
 
 #pragma endregion
 
@@ -124,6 +131,8 @@ bool initGame()
     generadorCasillas[2].fuerzaDistorsion = 0.5;
     generadorCasillas[3].fuerzaDistorsion = 0.75;
 
+    fuenteMenu.createFromFile(RESOURCES_PATH"roboto_black.ttf");
+
 #pragma endregion
 
 #pragma region sonido
@@ -139,24 +148,7 @@ bool initGame()
 	return true;
 }
 
-
-
-bool gameLogic(float deltaTime)
-{
-#pragma region init stuff
-	int w = 0; int h = 0;
-	w = platform::getFrameBufferSizeX(); //window w
-	h = platform::getFrameBufferSizeY(); //window h
-	
-	glViewport(0, 0, w, h);
-	glClear(GL_COLOR_BUFFER_BIT); //clear screen
-
-	renderer.updateWindowMetrics(w, h);
-
-    if(!IsSoundPlaying(musicaFondo)){
-        PlaySound(musicaFondo);
-    }
-#pragma endregion
+void gamePlay(float deltaTime,int w,int h){
 
 #pragma region movimiento
     glm::vec2 movimiento = {};
@@ -234,7 +226,7 @@ bool gameLogic(float deltaTime)
         Balas b;
         //para medio centrar las balas
         glm::vec2 centroJugador={datosJuego.playerPos.x-datosJuego.tamanioNave/2,
-                  datosJuego.playerPos.y-datosJuego.tamanioNave/2};
+                                 datosJuego.playerPos.y-datosJuego.tamanioNave/2};
 
         b.setPosition(centroJugador);
 
@@ -301,11 +293,48 @@ bool gameLogic(float deltaTime)
 
 
 
+}
+
+bool gameLogic(float deltaTime)
+{
+#pragma region init stuff
+	int w = 0; int h = 0;
+	w = platform::getFrameBufferSizeX(); //window w
+	h = platform::getFrameBufferSizeY(); //window h
+	
+	glViewport(0, 0, w, h);
+	glClear(GL_COLOR_BUFFER_BIT); //clear screen
+
+	renderer.updateWindowMetrics(w, h);
+
+    if(!IsSoundPlaying(musicaFondo)){
+        PlaySound(musicaFondo);
+    }
+#pragma endregion
+
+    if(isGame){
+        gamePlay(deltaTime,w,h);
+    }else{
+
+        UIrenderer.Begin(1);
+
+        if(UIrenderer.Button("Play",Colors_White)){
+            isGame=true;
+            reiniciarJuego();
+        }
+
+        UIrenderer.End();
+
+        UIrenderer.renderFrame(renderer,fuenteMenu,platform::getRelMousePosition(),platform::isLMousePressed(),platform::isLMouseHeld(),
+                               platform::isLMouseReleased(),platform::isButtonReleased(platform::Button::Escape),platform::getTypedInput(),deltaTime);
+
+    }
+
 	renderer.flush();
 
 
 	//ImGui::ShowDemoWindow();
-
+/*
 #pragma region Debug dentro del juego
 
     ImGui::Begin("debug");
@@ -392,7 +421,7 @@ bool gameLogic(float deltaTime)
 
     ImGui::End();
 #pragma endregion
-
+*/
 
 	return true;
 #pragma endregion
