@@ -53,6 +53,7 @@ RenderizadoCasillas generadorCasillas[CAPASFONDO];
 
 Sound sonidoDisparo;
 Sound musicaFondo;
+Sound musicaMenu;
 
 glui::RendererUi UIrenderer;
 
@@ -142,6 +143,9 @@ bool initGame()
 
     musicaFondo = LoadSound(RESOURCES_PATH"sonidos/MusicaDelJuegoProvisional.wav");
     SetSoundVolume(musicaFondo,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+    //todo cambiar el formato mp3 a .raw
+    musicaMenu = LoadSound(RESOURCES_PATH"sonidos/MusicaMenu.mp3");
+    SetSoundVolume(musicaMenu,datosJuego.volumenMusica*datosJuego.volumenGeneral);
 
 #pragma endregion
 
@@ -203,15 +207,6 @@ void gamePlay(float deltaTime,int w,int h){
     for(auto &e : datosJuego.VEnemigos){
         e.render(renderer,enemigo1,atlasEnemigos,glm::vec2(1,0),datosJuego.playerPos);
     }
-    //impacto de balas
-
-
-    //bajar la vida si golpea una bala
-
-    //eliminar enemigo si se queda sin vida sino eliminar solo la bala
-
-
-
 
 #pragma endregion
 
@@ -307,20 +302,38 @@ bool gameLogic(float deltaTime)
 
 	renderer.updateWindowMetrics(w, h);
 
-    if(!IsSoundPlaying(musicaFondo)){
-        PlaySound(musicaFondo);
-    }
+
 #pragma endregion
 
     if(isGame){
+        StopSound(musicaMenu);
+        if(!IsSoundPlaying(musicaFondo)){
+            PlaySound(musicaFondo);
+        }
         gamePlay(deltaTime,w,h);
     }else{
 
+        if(!IsSoundPlaying(musicaMenu)){
+            PlaySound(musicaMenu);
+        }
+
         UIrenderer.Begin(1);
 
-        if(UIrenderer.Button("Play",Colors_White)){
+        if(UIrenderer.Button("Jugar",Colors_White)){
             isGame=true;
             reiniciarJuego();
+        }
+        if(UIrenderer.Button("Mejoras",Colors_White)){
+
+        }
+        if(UIrenderer.Button("Hangar",Colors_White)){
+
+        }
+        if(UIrenderer.Button("Opciones",Colors_White)){
+
+        }
+        if(UIrenderer.Button("Salir",Colors_White)){
+
         }
 
         UIrenderer.End();
