@@ -34,6 +34,8 @@ struct DatosJuego{
     float volumenMusica = 0.05;
     float volumenFX = 0.2;
 
+    bool botonAPresionadoAnteriormente = false;
+
 }datosJuego;
 
 #pragma region inicializacion de texturas
@@ -234,6 +236,48 @@ void gamePlay(float deltaTime,int w,int h){
 #pragma region manejar balas
 
 //habra que adaptar esto a una utilizacion por tiempo y parametro
+
+    glfwPollEvents();
+    if (glfwJoystickPresent(GLFW_JOYSTICK_1) && glfwJoystickIsGamepad(GLFW_JOYSTICK_1)) {
+        GLFWgamepadstate state;
+
+
+        if (glfwGetGamepadState(GLFW_JOYSTICK_1, &state)) {
+            // Obtener el estado actual del botón A
+            bool botonAPresionadoAhora = state.buttons[GLFW_GAMEPAD_BUTTON_B];
+
+            // Detección de flanco: detectar solo cuando el botón pasa de no presionado a presionado
+            if (!datosJuego.botonAPresionadoAnteriormente && botonAPresionadoAhora) {
+
+                if (!IsSoundPlaying(sonidoDisparo)) {
+                    PlaySound(sonidoDisparo);
+                }
+                Balas b;
+                //para medio centrar las balas
+                glm::vec2 centroJugador = {datosJuego.playerPos.x - datosJuego.tamanioNave / 2,
+                                           datosJuego.playerPos.y - datosJuego.tamanioNave / 2};
+
+                b.setPosition(centroJugador);
+
+                glm::vec2 posEnemigoMasCercano = calculaPosEnemigoMasCercano(datosJuego.VEnemigos, centroJugador);
+                glm::vec2 direccion = posEnemigoMasCercano - centroJugador;
+                if (glm::length(direccion) > 0) {
+                    direccion = glm::normalize(direccion);
+                }
+                b.setDireccion(direccion);
+                b.setDanio(5);
+                //esto va a haber que cambiarlo
+
+                datosJuego.VBalas.push_back(b);
+            }
+
+            // Actualizar el estado anterior del botón A
+            datosJuego.botonAPresionadoAnteriormente = botonAPresionadoAhora;
+        }
+
+
+
+    }
 
     if(platform::isRMousePressed()){
         if(!IsSoundPlaying(sonidoDisparo)){
