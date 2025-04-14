@@ -171,6 +171,27 @@ void gamePlay(float deltaTime,int w,int h){
         movimiento.y += 1;
     }
 
+    //Movimiento con mando
+    float deadZone = 0.2f;
+    //comprobar si el mando esta conectado
+    if (glfwJoystickPresent(GLFW_JOYSTICK_1) && glfwJoystickIsGamepad(GLFW_JOYSTICK_1)) {
+
+        GLFWgamepadstate state;
+
+        if (glfwGetGamepadState(GLFW_JOYSTICK_1, &state)) {
+
+            float axisX = state.axes[GLFW_GAMEPAD_AXIS_LEFT_X];
+            float axisY = state.axes[GLFW_GAMEPAD_AXIS_LEFT_Y];
+
+            if (std::abs(axisX) > deadZone || std::abs(axisY) > deadZone) {
+                //si se pasa la zona muerta se mueve el personaje
+                movimiento.x += axisX;
+                movimiento.y += axisY;
+            }
+
+        }
+    }
+
     //normalizacion del vector para que la diagonal vaya a la misma velocidad
     if(movimiento.x !=0 || movimiento.y !=0){
 
@@ -213,7 +234,7 @@ void gamePlay(float deltaTime,int w,int h){
 #pragma region manejar balas
 
 //habra que adaptar esto a una utilizacion por tiempo y parametro
-    //todo esto despues hay que ponerle un timer y quitar el raton.
+
     if(platform::isRMousePressed()){
         if(!IsSoundPlaying(sonidoDisparo)){
             PlaySound(sonidoDisparo);
@@ -287,67 +308,6 @@ void gamePlay(float deltaTime,int w,int h){
     renderer.renderRectangle({datosJuego.playerPos- glm::vec2(datosJuego.tamanioNave/2,datosJuego.tamanioNave/2),  64, 64}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
 
 
-
-}
-
-bool gameLogic(float deltaTime)
-{
-#pragma region init stuff
-	int w = 0; int h = 0;
-	w = platform::getFrameBufferSizeX(); //window w
-	h = platform::getFrameBufferSizeY(); //window h
-	
-	glViewport(0, 0, w, h);
-	glClear(GL_COLOR_BUFFER_BIT); //clear screen
-
-	renderer.updateWindowMetrics(w, h);
-
-
-#pragma endregion
-
-    if(isGame){
-        StopSound(musicaMenu);
-        if(!IsSoundPlaying(musicaFondo)){
-            PlaySound(musicaFondo);
-        }
-        gamePlay(deltaTime,w,h);
-    }else{
-
-        if(!IsSoundPlaying(musicaMenu)){
-            PlaySound(musicaMenu);
-        }
-
-        UIrenderer.Begin(1);
-
-        if(UIrenderer.Button("Jugar",Colors_White)){
-            isGame=true;
-            reiniciarJuego();
-        }
-        if(UIrenderer.Button("Mejoras",Colors_White)){
-
-        }
-        if(UIrenderer.Button("Hangar",Colors_White)){
-
-        }
-        if(UIrenderer.Button("Opciones",Colors_White)){
-
-        }
-        if(UIrenderer.Button("Salir",Colors_White)){
-
-        }
-
-        UIrenderer.End();
-
-        UIrenderer.renderFrame(renderer,fuenteMenu,platform::getRelMousePosition(),platform::isLMousePressed(),platform::isLMouseHeld(),
-                               platform::isLMouseReleased(),platform::isButtonReleased(platform::Button::Escape),platform::getTypedInput(),deltaTime);
-
-    }
-
-	renderer.flush();
-
-
-	//ImGui::ShowDemoWindow();
-/*
 #pragma region Debug dentro del juego
 
     ImGui::Begin("debug");
@@ -376,6 +336,7 @@ bool gameLogic(float deltaTime)
     }
 
     ImGui::End();
+#pragma endregion
 #pragma region controladoresAudio
 
     //todo falta añadir que nose pueda pasar de un valor negativo
@@ -434,7 +395,108 @@ bool gameLogic(float deltaTime)
 
     ImGui::End();
 #pragma endregion
-*/
+
+}
+
+bool gameLogic(float deltaTime)
+{
+#pragma region init stuff
+	int w = 0; int h = 0;
+	w = platform::getFrameBufferSizeX(); //window w
+	h = platform::getFrameBufferSizeY(); //window h
+	
+	glViewport(0, 0, w, h);
+	glClear(GL_COLOR_BUFFER_BIT); //clear screen
+
+	renderer.updateWindowMetrics(w, h);
+
+
+#pragma endregion
+
+    if(isGame){
+        StopSound(musicaMenu);
+        if(!IsSoundPlaying(musicaFondo)){
+            PlaySound(musicaFondo);
+        }
+        gamePlay(deltaTime,w,h);
+    }else{
+
+        if(!IsSoundPlaying(musicaMenu)){
+            PlaySound(musicaMenu);
+        }
+
+
+        {
+            glui::Frame f({0, 0, w, h});
+
+            {
+                //LEFT SIDE
+                glui::Frame left({0, 0, w / 2, h});
+
+                 auto textBox = glui::Box().xCenter().yTopPerc(1).xDimensionPercentage(1).
+                            yDimensionPixels(h)();
+
+                    renderer.renderRectangle({0,0,textBox.z,textBox.w}, {1,0.1,0.1,1});
+                    renderer.renderRectangle({0,0,textBox.z,textBox.w}, texturaNavePrincipal, Colors_White,{},0);
+
+
+
+
+            }
+            //Pruebas
+            {
+
+            glui::Frame patata({0, 0, w , h/5});
+
+
+
+            }
+
+            {
+                //RIGHT SIDE
+                UIrenderer.Begin(12);
+                glui::Frame right({w/2,0,w/2,h});
+
+
+                UIrenderer.newColum(1);
+
+                if(UIrenderer.Button("Jugar",Colors_White)){
+                    isGame=true;
+                    reiniciarJuego();
+                }
+                if(UIrenderer.Button("Mejoras",Colors_White)){
+
+                }
+
+                if(UIrenderer.Button("Hangar",Colors_White)){
+
+                }
+                if(UIrenderer.Button("Opciones",Colors_White)){
+
+                }
+                if(UIrenderer.Button("Salir",Colors_White)){
+                return 0;
+                }
+
+                UIrenderer.End();
+
+                UIrenderer.renderFrame(renderer,fuenteMenu,platform::getRelMousePosition(),platform::isLMousePressed(),platform::isLMouseHeld(),
+                                       platform::isLMouseReleased(),platform::isButtonReleased(platform::Button::Escape),platform::getTypedInput(),deltaTime);
+
+            }
+
+
+
+        }
+
+
+
+
+    }
+
+	renderer.flush();
+
+
 
 	return true;
 #pragma endregion
