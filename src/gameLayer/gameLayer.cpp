@@ -45,6 +45,8 @@ gl2d::Texture texturaNavePrincipal;
 constexpr int CAPASFONDO = 4;
 gl2d::Texture texturaFondo[CAPASFONDO];
 
+gl2d::Texture texturaBotonPrueba;
+
 gl2d::Texture bala1;
 gl2d::TextureAtlasPadding atlasBalas;
 
@@ -123,6 +125,8 @@ bool initGame()
                 (RESOURCES_PATH"spaceShip/ships/newShips.png",16, true);
         atlasEnemigos= gl2d::TextureAtlasPadding(2,1, bala1.GetSize().x,bala1.GetSize().y);
     }
+
+    texturaBotonPrueba.loadFromFile(RESOURCES_PATH"fuentes/PruebaBoton.png",true);
 
     generadorCasillas[0].fondo = texturaFondo[0];
     generadorCasillas[1].fondo = texturaFondo[1];
@@ -464,6 +468,7 @@ bool gameLogic(float deltaTime)
         }
         gamePlay(deltaTime,w,h);
     }else{
+#pragma region interfaz_inicio
 
         if(!IsSoundPlaying(musicaMenu)){
             PlaySound(musicaMenu);
@@ -477,11 +482,16 @@ bool gameLogic(float deltaTime)
                 //LEFT SIDE
                 glui::Frame left({0, 0, w / 2, h});
 
-                 auto textBox = glui::Box().xCenter().yTopPerc(1).xDimensionPercentage(1).
-                            yDimensionPixels(h)();
+                auto textBox = glui::Box().xCenter().yTopPerc(1).xDimensionPercentage(1).
+                        yDimensionPixels(h)();
 
-                    renderer.renderRectangle({0,0,textBox.z,textBox.w}, {1,0.1,0.1,1});
-                    renderer.renderRectangle({0,0,textBox.z,textBox.w}, texturaNavePrincipal, Colors_White,{},0);
+                renderer.renderRectangle({0,0,textBox.z*2,textBox.w}, texturaFondo[0], Colors_White,{},0);
+                renderer.renderRectangle({0,0,textBox.z*2,textBox.w}, texturaFondo[1], Colors_White,{},0);
+                renderer.renderRectangle({0,0,textBox.z*2,textBox.w}, texturaFondo[2], Colors_White,{},0);
+
+                //Z es el ancho final
+                //W es el alto final que no se poruqe se esta saliendo de la pantalla
+                renderer.renderRectangle({(textBox.z/4),(textBox.w/4),(textBox.z/2),(textBox.w/2)}, texturaNavePrincipal, Colors_White,{},0);
 
 
 
@@ -490,7 +500,7 @@ bool gameLogic(float deltaTime)
             //Pruebas
             {
 
-            glui::Frame patata({0, 0, w , h/5});
+                glui::Frame patata({0, 0, w , h/5});
 
 
 
@@ -504,22 +514,17 @@ bool gameLogic(float deltaTime)
 
                 UIrenderer.newColum(1);
 
-                if(UIrenderer.Button("Jugar",Colors_White)){
+
+
+                if(UIrenderer.Button("Jugar",Colors_White,texturaBotonPrueba)){
                     isGame=true;
                     reiniciarJuego();
                 }
-                if(UIrenderer.Button("Mejoras",Colors_White)){
+                if(UIrenderer.Button("Opciones",Colors_White,texturaBotonPrueba)){
 
                 }
-
-                if(UIrenderer.Button("Hangar",Colors_White)){
-
-                }
-                if(UIrenderer.Button("Opciones",Colors_White)){
-
-                }
-                if(UIrenderer.Button("Salir",Colors_White)){
-                return 0;
+                if(UIrenderer.Button("Salir",Colors_White,texturaBotonPrueba)){
+                    return 0;
                 }
 
                 UIrenderer.End();
@@ -532,17 +537,17 @@ bool gameLogic(float deltaTime)
 
 
         }
-
+#pragma endregion
 
 
 
     }
 
-	renderer.flush();
+    renderer.flush();
 
 
 
-	return true;
+    return true;
 #pragma endregion
 
 }
