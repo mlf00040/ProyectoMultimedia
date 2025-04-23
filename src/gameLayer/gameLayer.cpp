@@ -303,8 +303,8 @@ void gamePlay(float deltaTime,int w,int h){
                 }
                 Balas b;
                 //para medio centrar las balas
-                glm::vec2 centroJugador = {datosJuego.playerPos.x - datosJuego.tamanioNave / 2,
-                                           datosJuego.playerPos.y - datosJuego.tamanioNave / 2};
+                glm::vec2 centroJugador = {datosJuego.playerPos.x - datosJuego.tamanioNave / 4,
+                                           datosJuego.playerPos.y - datosJuego.tamanioNave / 4};
 
                 b.setPosition(centroJugador);
 
@@ -338,8 +338,8 @@ void gamePlay(float deltaTime,int w,int h){
         Balas b;
 
         //para  centrar las balas
-        glm::vec2 centroJugador={datosJuego.playerPos.x-datosJuego.tamanioNave/2,
-                                 datosJuego.playerPos.y-datosJuego.tamanioNave/2};
+        glm::vec2 centroJugador={datosJuego.playerPos.x-datosJuego.tamanioNave/4,
+                                 datosJuego.playerPos.y-datosJuego.tamanioNave/4};
 
         b.setPosition(centroJugador);
 
@@ -374,7 +374,7 @@ void gamePlay(float deltaTime,int w,int h){
         //Comprobar si la bala ha impactado en un enemigo
         for(int e=0;e<datosJuego.VEnemigos.size();e++){
 
-            if(impactoBala(datosJuego.VBalas[i].getPosition(),datosJuego.VEnemigos[e].getPosicion(),datosJuego.VEnemigos[e].getTamanio())){
+            if(impacto(datosJuego.VBalas[i].getPosition(),datosJuego.VEnemigos[e].getPosicion(),datosJuego.VEnemigos[e].getTamanio(),datosJuego.VBalas[i].getTamanio())){
                 //actualizar la vida del enemigo
                 datosJuego.VEnemigos[e].setVida(datosJuego.VEnemigos[e].getVida()-datosJuego.VBalas[i].getDanio());
                 //quitamos la bala

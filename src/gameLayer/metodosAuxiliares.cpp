@@ -42,7 +42,7 @@ bool impactoBala(const glm::vec2 &posBala,const glm::vec2 &posNave,const float t
 }
 
 bool impacto(const glm::vec2 &posOtro, const glm::vec2 &posNave, const float tamanioNave, const float tamanioOtro) {
-    //Calcular la distancia entre los centros
+    //Calcular la distancia entre los centros, para ello calculamos el centro de los objetos ya que por defecto no lo es
     float distancia = glm::distance(posNave + glm::vec2(tamanioNave / 2, tamanioNave / 2), posOtro + glm::vec2(tamanioOtro / 2, tamanioOtro / 2));
 
     //Calcular la suma de los radios (mitad de los tamaños y una reduccion de uno de los componentes para que encaje bien visualmente)

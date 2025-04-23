@@ -8,7 +8,7 @@ void Balas::render(gl2d::Renderer2D &renderer,
                    gl2d::Texture texturaBala,
                    gl2d::TextureAtlasPadding atlasBalas){
 
-    glm::vec4 rect = {position.x, position.y, 32, 32}; // Tamaño de la bala
+    glm::vec4 rect = {position.x-tamanio/2, position.y-tamanio/2, tamanio, tamanio}; // Tamaño de la bala
     renderer.renderRectangle(rect, texturaBala, Colors_White,{},glm::degrees(atan2(-direccion.y, direccion.x))-90.0f,atlasBalas.get(1,0));
 
 }
