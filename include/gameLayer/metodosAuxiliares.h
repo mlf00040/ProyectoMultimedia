@@ -20,4 +20,8 @@ glm::vec2 calculaPosEnemigoMasCercano(const std::vector<Enemigo> &vEnemigos, con
 
 bool impactoBala(const glm::vec2 &posBala, const glm::vec2 &posNave,const float tamanioNave);
 
+void spawnEnemigo(std::vector<Enemigo> &vEnemigos,int vida, int tipox, int tipoy, int velocidad, int tamanio,
+                 int nuevaPosX, int nuevaPosY);
+
+
 #endif //SPACEGAME_METODOSAUXILIARES_H

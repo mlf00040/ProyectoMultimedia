@@ -41,3 +41,17 @@ bool impactoBala(const glm::vec2 &posBala,const glm::vec2 &posNave,const float t
         return false;
     }
 }
+
+void spawnEnemigo(std::vector<Enemigo> &vEnemigos,int vida, int tipox, int tipoy, int velocidad, int tamanio,
+                  int nuevaPosX, int nuevaPosY){
+
+    Enemigo e;
+    e.setPosicion({nuevaPosX,nuevaPosY});
+    e.setVida(vida);
+    e.setTipo({tipox,tipoy});
+    e.setVelocidad(velocidad);
+    e.setTamanio(tamanio);
+
+    vEnemigos.push_back(e);
+
+}

@@ -18,14 +18,15 @@
 #include <metodosAuxiliares.h>
 #include <raudio.h>
 #include <glui/glui.h>
+#include <random>
 
 
 
 struct DatosJuego{
 
-    glm::vec2 playerPos = {100,100};
+    glm::vec2 playerPos = {100,100}; //todo lo suyo seria ponerlo aleatorio en el mapa
     float direccionGiro = -90.0f;
-    float tamanioNave = 64.0f;
+    float tamanioNave = 64.0f; // es el tamanio o hitbox de la nave
 
     std::vector<Balas> VBalas;
     std::vector<Enemigo> VEnemigos;
@@ -34,9 +35,24 @@ struct DatosJuego{
     float volumenMusica = 0.05;
     float volumenFX = 0.2;
 
-    bool botonAPresionadoAnteriormente = false;
+    //Parametros auxiliares
+
+    bool botonAPresionadoAnteriormente = false; // para evitar que se dispare una bala por frame cuando se utiliza mando.
+
+    //Parametros para interfaces
+    bool isGame=false;
 
 }datosJuego;
+
+
+
+#pragma region cosas de semillas y random
+std::random_device semilla; //genera una semilla aleatorio
+std::mt19937 xd(semilla.entropy() ? semilla() : std::time(nullptr)); // si la aleatoria no tiene suficiente entropia genera una utilizando la hora actual.
+std::uniform_int_distribution<> genPos(0, 1000);   //random para sacar un numero del 1 al 1000 (usado para la generacion de enemigos)
+std::uniform_int_distribution<> genMap(0, 4096);    //random de 1 a 4096 para establecer al jugador en una posicion aleatoria del mapa
+std::uniform_int_distribution<> genSigno(0, 1);
+#pragma endregion
 
 #pragma region inicializacion de texturas
 
@@ -61,13 +77,15 @@ Sound musicaMenu;
 
 glui::RendererUi UIrenderer;
 
-bool isGame=false;
-
 gl2d::Font fuenteMenu;
 
 #pragma endregion
 
+
+
 void reiniciarJuego(){
+    //reinicializa los datos del juego
+    datosJuego.isGame=false;
     datosJuego={};
     StopSound(musicaFondo);
 }
@@ -161,9 +179,10 @@ bool initGame()
 void gamePlay(float deltaTime,int w,int h){
 
 #pragma region movimiento
+
     glm::vec2 movimiento = {};
 
-    //movimiento de posicion
+    //movimiento de posicion con teclado
     if(platform::isButtonHeld(platform::Button::Left) || platform::isButtonHeld(platform::Button::A)){
         movimiento.x -=1 ;
     }
@@ -214,6 +233,7 @@ void gamePlay(float deltaTime,int w,int h){
 
 #pragma region Texturas del fondo
 
+    //bucle para que carge las distintas capas del fondo y asi dar efecto de movimiento
     for(int i=0; i< CAPASFONDO;i++){
         generadorCasillas[i].render(renderer);
     }
@@ -241,6 +261,7 @@ void gamePlay(float deltaTime,int w,int h){
 
 //habra que adaptar esto a una utilizacion por tiempo y parametro
 
+    //disparo con mando.
     glfwPollEvents();
     if (glfwJoystickPresent(GLFW_JOYSTICK_1) && glfwJoystickIsGamepad(GLFW_JOYSTICK_1)) {
         GLFWgamepadstate state;
@@ -283,26 +304,31 @@ void gamePlay(float deltaTime,int w,int h){
 
     }
 
+    //disparo con el raton
     if(platform::isRMousePressed()){
+        //si no esta sonando el sonido de la bala lo reproducimos. todo seria mas eficaz con un vector de 3 o 4 sonidos porque se dispara mas rapido que lo que suena el sonido
         if(!IsSoundPlaying(sonidoDisparo)){
             PlaySound(sonidoDisparo);
         }
+
         Balas b;
-        //para medio centrar las balas
+
+        //para  centrar las balas
         glm::vec2 centroJugador={datosJuego.playerPos.x-datosJuego.tamanioNave/2,
                                  datosJuego.playerPos.y-datosJuego.tamanioNave/2};
 
         b.setPosition(centroJugador);
 
+        //como las balas van autodirigidas se calcula el enemigo mas cercano
         glm::vec2 posEnemigoMasCercano = calculaPosEnemigoMasCercano(datosJuego.VEnemigos, centroJugador);
         glm::vec2 direccion = posEnemigoMasCercano - centroJugador;
         if (glm::length(direccion) > 0) {
             direccion = glm::normalize(direccion);
         }
         b.setDireccion(direccion);
-        b.setDanio(5);
-        //esto va a haber que cambiarlo
 
+        //se establece el danio de la bala
+        b.setDanio(5);
 
         datosJuego.VBalas.push_back(b);
     }
@@ -313,6 +339,7 @@ void gamePlay(float deltaTime,int w,int h){
     }
 
     for(int i=0;i<datosJuego.VBalas.size();i++){
+
         //borrar las balas fuera de la pantalla
         if(glm::distance(datosJuego.VBalas[i].getPosition(),datosJuego.playerPos)>1'000){
             datosJuego.VBalas.erase(datosJuego.VBalas.begin()+i);
@@ -320,7 +347,7 @@ void gamePlay(float deltaTime,int w,int h){
             continue;
         }
 
-        //Comprobar si la bala ha impactado
+        //Comprobar si la bala ha impactado en un enemigo
         for(int e=0;e<datosJuego.VEnemigos.size();e++){
 
             if(impactoBala(datosJuego.VBalas[i].getPosition(),datosJuego.VEnemigos[e].getPosicion(),datosJuego.VEnemigos[e].getTamanio())){
@@ -349,10 +376,10 @@ void gamePlay(float deltaTime,int w,int h){
     }
 #pragma endregion
 
+    //movimiento de la camara al seguir al jugador. (300 es la velocidad de la camara y asi da efecto de incercia)
+    renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h);
 
-
-    renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h); //300 es la velocidad de la camara
-
+    //renderiza a la nave jugador
     renderer.renderRectangle({datosJuego.playerPos- glm::vec2(datosJuego.tamanioNave/2,datosJuego.tamanioNave/2),  64, 64}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
 
 
@@ -369,14 +396,44 @@ void gamePlay(float deltaTime,int w,int h){
     }
 
     if(ImGui::Button("Spawn enemigo")){
-        Enemigo e;
-        e.setPosicion(datosJuego.playerPos);
-        e.setVida(20);
-        e.setTipo({1,0});
-        e.setVelocidad(350);
-        e.setTamanio(64);
 
-        datosJuego.VEnemigos.push_back(e);
+        bool posicionValida = false;
+        glm::vec2 nuevaPosicion = {0, 0};
+        const float radioMinimo = 600.0f; // Radio mínimo alrededor del jugador
+
+        while (!posicionValida) {
+
+            int posXrand = genPos(xd);
+            int posYrand = genPos(xd);
+            int Xsigno = genSigno(xd);
+            int Ysigno = genSigno(xd);
+
+            glm::vec2 posSumada = {0, 0};
+
+            if (Xsigno == 1) {
+                posSumada.x += posXrand;
+            } else {
+                posSumada.x -= posXrand;
+            }
+            if (Ysigno == 1) {
+                posSumada.y += posYrand;
+            } else {
+                posSumada.y -= posYrand;
+            }
+
+            nuevaPosicion = {datosJuego.playerPos.x + posSumada.x, datosJuego.playerPos.y + posSumada.y};
+
+            // Calcular la distancia entre el jugador y la nueva posición
+            float distancia = glm::distance(datosJuego.playerPos, nuevaPosicion);
+
+            // Verificar si la distancia es mayor que el radio mínimo
+            if (distancia > radioMinimo) {
+                posicionValida = true;
+            }
+        }
+
+        spawnEnemigo(datosJuego.VEnemigos, 5, 1, 0, 350, 64, nuevaPosicion.x, nuevaPosicion.y);
+
     }
 
     if(ImGui::Button("reiniciar juego")){
@@ -446,6 +503,8 @@ void gamePlay(float deltaTime,int w,int h){
 
 }
 
+
+
 bool gameLogic(float deltaTime)
 {
 #pragma region init stuff
@@ -461,94 +520,78 @@ bool gameLogic(float deltaTime)
 
 #pragma endregion
 
-    if(isGame){
+    if(datosJuego.isGame){
+
         StopSound(musicaMenu);
+
         if(!IsSoundPlaying(musicaFondo)){
+
             PlaySound(musicaFondo);
         }
+
+        //llamamos a la funcion que ejecuta el juego.
         gamePlay(deltaTime,w,h);
     }else{
-#pragma region interfaz_inicio
 
+#pragma region interfaz_inicio
+        //si la musica del menu no se esta reproduciendo la ponemos
         if(!IsSoundPlaying(musicaMenu)){
             PlaySound(musicaMenu);
         }
 
-
         {
-            glui::Frame f({0, 0, w, h});
-
-            {
-                //LEFT SIDE
-                glui::Frame left({0, 0, w / 2, h});
-
-                auto textBox = glui::Box().xCenter().yTopPerc(1).xDimensionPercentage(1).
-                        yDimensionPixels(h)();
-
-                renderer.renderRectangle({0,0,textBox.z*2,textBox.w}, texturaFondo[0], Colors_White,{},0);
-                renderer.renderRectangle({0,0,textBox.z*2,textBox.w}, texturaFondo[1], Colors_White,{},0);
-                renderer.renderRectangle({0,0,textBox.z*2,textBox.w}, texturaFondo[2], Colors_White,{},0);
-
-                //Z es el ancho final
-                //W es el alto final que no se poruqe se esta saliendo de la pantalla
-                renderer.renderRectangle({(textBox.z/4),(textBox.w/4),(textBox.z/2),(textBox.w/2)}, texturaNavePrincipal, Colors_White,{},0);
-
-
-
-
-            }
-            //Pruebas
             {
 
-                glui::Frame patata({0, 0, w , h/5});
+                //todo hay que arrglar esto que cuando se reinicia se va todo a la mierda porque la posicion se queda fija, (se deberia de solucionar cogiendo las coordenadas de arriba a la izquierda del frame)
+                renderer.renderRectangle({0,0,w,h}, texturaFondo[0], Colors_White,{},0);
+                renderer.renderRectangle({0,0,w,h}, texturaFondo[1], Colors_White,{},0);
+                renderer.renderRectangle({0,0,w,h}, texturaFondo[2], Colors_White,{},0);
 
+
+                renderer.renderRectangle({(w/8),(h/4),(w/4),(h/2)}, texturaNavePrincipal, Colors_White,{},0);
 
 
             }
 
             {
-                //RIGHT SIDE
+                //Lado izquierdo de la interfaz de Inicio (carga los botones)
                 UIrenderer.Begin(12);
-                glui::Frame right({w/2,0,w/2,h});
 
+                    UIrenderer.newColum(1);
 
-                UIrenderer.newColum(1);
+                    //boton para jugar
+                    if(UIrenderer.Button("Jugar",Colors_White,texturaBotonPrueba)){
+                        std::cout << "datos juego: " << datosJuego.isGame << std::endl;
+                        datosJuego.isGame=true;
+                        std::cout << "datos juego: " << datosJuego.isGame << std::endl;
 
+                    }
 
+                    //boton para el menu de opciones, todo en un archivo aparte que sean solo los constructores de las interfazces
+                    if(UIrenderer.Button("Opciones",Colors_White,texturaBotonPrueba)){
+                        //llamada al constructor de la interfaz de opciones
+                    }
 
-                if(UIrenderer.Button("Jugar",Colors_White,texturaBotonPrueba)){
-                    isGame=true;
-                    reiniciarJuego();
-                }
-                if(UIrenderer.Button("Opciones",Colors_White,texturaBotonPrueba)){
-
-                }
-                if(UIrenderer.Button("Salir",Colors_White,texturaBotonPrueba)){
-                    return 0;
-                }
+                    //boton para salir del juego
+                    if(UIrenderer.Button("Salir",Colors_White,texturaBotonPrueba)){
+                        return 0;
+                    }
 
                 UIrenderer.End();
 
+                //renderiza toda la columna
                 UIrenderer.renderFrame(renderer,fuenteMenu,platform::getRelMousePosition(),platform::isLMousePressed(),platform::isLMouseHeld(),
                                        platform::isLMouseReleased(),platform::isButtonReleased(platform::Button::Escape),platform::getTypedInput(),deltaTime);
 
             }
 
-
-
         }
 #pragma endregion
 
-
-
     }
-
     renderer.flush();
 
-
-
     return true;
-#pragma endregion
 
 }
 
