@@ -247,6 +247,30 @@ void gamePlay(float deltaTime,int w,int h){
         e.movimiento(deltaTime,datosJuego.playerPos);
     }
 
+    //comprobar si un enemigo ha impactado al nave principal
+    //Comprobar si la bala ha impactado en un enemigo
+    for(int i=0;i<datosJuego.VEnemigos.size();i++){
+
+        if(impacto(datosJuego.VEnemigos[i].getPosicion(),datosJuego.playerPos,datosJuego.tamanioNave,datosJuego.VEnemigos[i].getTamanio())){
+            //actualizar la vida del jugador
+
+            std::cout << "enemigo a impactado jugador"<<std::endl;
+
+
+
+            //quitamos al enemigo
+            datosJuego.VEnemigos.erase(datosJuego.VEnemigos.begin()+i);
+            i--;
+
+
+            //reproducir animacion de explosion en el lugar donde ha muerto el enemigo
+
+            //reproducir audio de muerte.
+        }
+
+
+    }
+
 #pragma endregion
 
 #pragma region renderizado enemigos
@@ -364,6 +388,8 @@ void gamePlay(float deltaTime,int w,int h){
                     break;
                 }
             }
+
+
         }
 
     }
@@ -561,10 +587,8 @@ bool gameLogic(float deltaTime)
 
                     //boton para jugar
                     if(UIrenderer.Button("Jugar",Colors_White,texturaBotonPrueba)){
-                        std::cout << "datos juego: " << datosJuego.isGame << std::endl;
-                        datosJuego.isGame=true;
-                        std::cout << "datos juego: " << datosJuego.isGame << std::endl;
 
+                        datosJuego.isGame=true;
                     }
 
                     //boton para el menu de opciones, todo en un archivo aparte que sean solo los constructores de las interfazces

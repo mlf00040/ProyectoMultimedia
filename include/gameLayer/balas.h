@@ -15,6 +15,7 @@ class Balas{
 
     float danio=0;
     float velocidad=400;
+    float tamanio=32;
 
 public:
 
@@ -39,6 +40,10 @@ public:
     float getVelocidad() const;
 
     void setVelocidad(float velocidad);
+
+    float getTamanio() const;
+
+    void setTamanio(float tamanio);
 };
 
 #endif //SPACEGAME_BALAS_H

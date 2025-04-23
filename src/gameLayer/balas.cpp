@@ -50,3 +50,11 @@ float Balas::getVelocidad() const {
 void Balas::setVelocidad(float velocidad) {
     Balas::velocidad = velocidad;
 }
+
+float Balas::getTamanio() const {
+    return tamanio;
+}
+
+void Balas::setTamanio(float tamanio) {
+    Balas::tamanio = tamanio;
+}

@@ -20,6 +20,9 @@ glm::vec2 calculaPosEnemigoMasCercano(const std::vector<Enemigo> &vEnemigos, con
 
 bool impactoBala(const glm::vec2 &posBala, const glm::vec2 &posNave,const float tamanioNave);
 
+bool impacto(const glm::vec2 &posOtro, const glm::vec2 &posNave, const float tamanioNave, const float tamanioOtro);
+
+
 void spawnEnemigo(std::vector<Enemigo> &vEnemigos,int vida, int tipox, int tipoy, int velocidad, int tamanio,
                  int nuevaPosX, int nuevaPosY);
 
