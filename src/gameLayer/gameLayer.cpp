@@ -303,8 +303,8 @@ void gamePlay(float deltaTime,int w,int h){
                 }
                 Balas b;
                 //para medio centrar las balas
-                glm::vec2 centroJugador = {datosJuego.playerPos.x - datosJuego.tamanioNave / 4,
-                                           datosJuego.playerPos.y - datosJuego.tamanioNave / 4};
+                glm::vec2 centroJugador = {datosJuego.playerPos.x ,
+                                           datosJuego.playerPos.y}; // asi salen ya directamente del centro del jugador
 
                 b.setPosition(centroJugador);
 
@@ -338,8 +338,8 @@ void gamePlay(float deltaTime,int w,int h){
         Balas b;
 
         //para  centrar las balas
-        glm::vec2 centroJugador={datosJuego.playerPos.x-datosJuego.tamanioNave/4,
-                                 datosJuego.playerPos.y-datosJuego.tamanioNave/4};
+        glm::vec2 centroJugador={datosJuego.playerPos.x,
+                                 datosJuego.playerPos.y}; // asi salen ya directamente del centro del jugador
 
         b.setPosition(centroJugador);
 
