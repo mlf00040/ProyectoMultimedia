@@ -27,6 +27,7 @@ struct DatosJuego{
     glm::vec2 playerPos = {100,100}; //todo lo suyo seria ponerlo aleatorio en el mapa
     float direccionGiro = -90.0f;
     float tamanioNave = 64.0f; // es el tamanio o hitbox de la nave
+    int kills=0;
 
     std::vector<Balas> VBalas;
     std::vector<Enemigo> VEnemigos;
@@ -384,6 +385,7 @@ void gamePlay(float deltaTime,int w,int h){
                     //quitamos el enemigo (lo suyo seria llamar a una mini animacion de explosion y soltar chatarra espacial)
                     datosJuego.VEnemigos.erase(datosJuego.VEnemigos.begin()+e);
                     e--;
+                    datosJuego.kills++;
 
                     break;
                 }
@@ -407,6 +409,42 @@ void gamePlay(float deltaTime,int w,int h){
 
     //renderiza a la nave jugador
     renderer.renderRectangle({datosJuego.playerPos- glm::vec2(datosJuego.tamanioNave/2,datosJuego.tamanioNave/2),  64, 64}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
+
+
+#pragma region elementos UI
+
+    //Bloque del contador
+    renderer.pushCamera();
+    glui::Frame cont({0,0,w,h});
+    glui::Box contador = glui::Box().xLeftPerc(0.375).xDimensionPercentage(0.25).yAspectRatio(2.0f/8.0f);
+    renderer.renderRectangle(contador,texturaBotonPrueba);
+    //funcion para renderizar el texto dentro de la textura del fondo.
+    //la posicion que hay que pasarle al texto es la del centro del rectangulo
+    renderer.renderText({contador.dimensions.x+contador.dimensions.z/2,contador.dimensions.y+contador.dimensions.w/2-(contador.dimensions.w/9)},
+                        "01 : 33",fuenteMenu,Colors_Gray,renderer.determineTextRescaleFit("skibidi",fuenteMenu,contador)
+                        ,3,3,1,Colors_Transparent);
+    //renderer.popCamera();
+
+    //Bloque del contador de enemigos muertos abajo izquierda
+    //renderer.pushCamera();
+    glui::Frame kil({0,0,w,h});
+    glui::Box killsBox = glui::Box().xLeftPerc(0.01).xDimensionPercentage(0.075).yTopPerc(0.95).yAspectRatio(2.0f/8.0f);
+    //funcion para renderizar el texto dentro de la textura del fondo.
+    std::string contKills = "Kills: "+std::to_string(datosJuego.kills);
+    //la posicion que hay que pasarle al texto es la del centro del rectangulo, en este caso como es 0 es la esquina inferior izquierda.
+    renderer.renderText({killsBox.dimensions.x,killsBox.dimensions.y+killsBox.dimensions.w},
+                        contKills.c_str(),fuenteMenu,Colors_White,
+                        renderer.determineTextRescaleFit(contKills,fuenteMenu,killsBox),
+                        3,3,0,Colors_Transparent);
+    renderer.popCamera();
+
+    //bloque de la vida del jugador arriba izquierda
+    
+
+
+
+
+#pragma endregion
 
 
 #pragma region Debug dentro del juego

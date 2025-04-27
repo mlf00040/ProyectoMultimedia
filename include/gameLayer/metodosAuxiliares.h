@@ -9,6 +9,7 @@
 #include <balas.h>
 #include <enemigos.h>
 #include <vector>
+#include <glui/glui.h>
 
 /**
  * @brief Metodo para calcular el enemigo mas cercano de la manera mas eficiente posible
@@ -23,6 +24,7 @@ bool impacto(const glm::vec2 &posOtro, const glm::vec2 &posNave, const float tam
 
 void spawnEnemigo(std::vector<Enemigo> &vEnemigos,int vida, int tipox, int tipoy, int velocidad, int tamanio,
                  int nuevaPosX, int nuevaPosY);
+
 
 
 #endif //SPACEGAME_METODOSAUXILIARES_H
