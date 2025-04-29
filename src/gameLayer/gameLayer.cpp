@@ -19,6 +19,7 @@
 #include <raudio.h>
 #include <glui/glui.h>
 #include <random>
+#include <animacion.h>
 
 
 
@@ -28,9 +29,11 @@ struct DatosJuego{
     float direccionGiro = -90.0f;
     float tamanioNave = 64.0f; // es el tamanio o hitbox de la nave
     int kills=0;
+    float vidaJugador = 3;
 
     std::vector<Balas> VBalas;
     std::vector<Enemigo> VEnemigos;
+    std::vector<animacion> VAnimacion;
 
     float volumenGeneral = 1;
     float volumenMusica = 0.05;
@@ -70,6 +73,9 @@ gl2d::TextureAtlasPadding atlasBalas;
 gl2d::Texture enemigo1;
 gl2d::TextureAtlasPadding atlasEnemigos;
 
+gl2d::TextureAtlasPadding atlasExplosion;
+gl2d::Texture explosion;
+
 RenderizadoCasillas generadorCasillas[CAPASFONDO];
 
 Sound sonidoDisparo;
@@ -79,6 +85,8 @@ Sound musicaMenu;
 glui::RendererUi UIrenderer;
 
 gl2d::Font fuenteMenu;
+
+
 
 #pragma endregion
 
@@ -144,6 +152,10 @@ bool initGame()
                 (RESOURCES_PATH"spaceShip/ships/newShips.png",16, true);
         atlasEnemigos= gl2d::TextureAtlasPadding(2,1, bala1.GetSize().x,bala1.GetSize().y);
     }
+
+    explosion.loadFromFileWithPixelPadding(RESOURCES_PATH"space/explosionAsset.png",32,true);
+    atlasExplosion = gl2d::TextureAtlasPadding(3,2,explosion.GetSize().x,explosion.GetSize().y);
+
 
     texturaBotonPrueba.loadFromFile(RESOURCES_PATH"fuentes/PruebaBoton.png",true);
 
@@ -249,7 +261,6 @@ void gamePlay(float deltaTime,int w,int h){
     }
 
     //comprobar si un enemigo ha impactado al nave principal
-    //Comprobar si la bala ha impactado en un enemigo
     for(int i=0;i<datosJuego.VEnemigos.size();i++){
 
         if(impacto(datosJuego.VEnemigos[i].getPosicion(),datosJuego.playerPos,datosJuego.tamanioNave,datosJuego.VEnemigos[i].getTamanio())){
@@ -257,14 +268,20 @@ void gamePlay(float deltaTime,int w,int h){
 
             std::cout << "enemigo a impactado jugador"<<std::endl;
 
-
+            //crear animacion de explosion en el lugar donde ha muerto el enemigo
+            datosJuego.VAnimacion.emplace_back((datosJuego.VEnemigos[i].getPosicion()-glm::vec2{datosJuego.VEnemigos[i].getTamanio()/2,datosJuego.VEnemigos[i].getTamanio()/2})
+                    ,explosion,atlasExplosion,glm::vec2{datosJuego.VEnemigos[i].getTamanio(),datosJuego.VEnemigos[i].getTamanio()}
+                    ,0.125f,6);
 
             //quitamos al enemigo
             datosJuego.VEnemigos.erase(datosJuego.VEnemigos.begin()+i);
             i--;
 
 
-            //reproducir animacion de explosion en el lugar donde ha muerto el enemigo
+
+
+            //crear animacion de impacto al jugador
+
 
             //reproducir audio de muerte.
         }
@@ -382,9 +399,18 @@ void gamePlay(float deltaTime,int w,int h){
                 datosJuego.VBalas.erase(datosJuego.VBalas.begin()+i);
                 i--;
                 if( datosJuego.VEnemigos[e].getVida() <= 0){
-                    //quitamos el enemigo (lo suyo seria llamar a una mini animacion de explosion y soltar chatarra espacial)
+
+                    //inicializa la animacion.
+
+                    //la pos del enemigo apunta al centro del enemigo, por tanto hay que restarle el tamaño del enemigo para que de la pos de la esquina superior izquierda
+                    datosJuego.VAnimacion.emplace_back((datosJuego.VEnemigos[e].getPosicion()-glm::vec2{datosJuego.VEnemigos[e].getTamanio()/2,datosJuego.VEnemigos[e].getTamanio()/2})
+                                                       ,explosion,atlasExplosion,glm::vec2{datosJuego.VEnemigos[e].getTamanio(),datosJuego.VEnemigos[e].getTamanio()}
+                                                       ,0.125f,6);
+
+                    //borra al enemigo
                     datosJuego.VEnemigos.erase(datosJuego.VEnemigos.begin()+e);
                     e--;
+                    //aumenta en 1 las kills
                     datosJuego.kills++;
 
                     break;
@@ -404,12 +430,29 @@ void gamePlay(float deltaTime,int w,int h){
     }
 #pragma endregion
 
+
+
     //movimiento de la camara al seguir al jugador. (300 es la velocidad de la camara y asi da efecto de incercia)
     renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h);
 
     //renderiza a la nave jugador
     renderer.renderRectangle({datosJuego.playerPos- glm::vec2(datosJuego.tamanioNave/2,datosJuego.tamanioNave/2),  64, 64}, texturaNavePrincipal, Colors_White,{},datosJuego.direccionGiro + 90.0f);
 
+#pragma region renderizadoAnimaciones
+
+    for(int i=0;i<datosJuego.VAnimacion.size();i++){
+        //actualiza el estado de la animacion
+        datosJuego.VAnimacion[i].actualizar(deltaTime);
+
+        if (datosJuego.VAnimacion[i].estaActiva()){
+            datosJuego.VAnimacion[i].renderizar(renderer);
+        }else{
+            datosJuego.VAnimacion.erase(datosJuego.VAnimacion.begin()+i);
+            i--;
+        }
+    }
+
+#pragma endregion
 
 #pragma region elementos UI
 
@@ -417,10 +460,11 @@ void gamePlay(float deltaTime,int w,int h){
     renderer.pushCamera();
     glui::Frame cont({0,0,w,h});
     glui::Box contador = glui::Box().xLeftPerc(0.375).xDimensionPercentage(0.25).yAspectRatio(2.0f/8.0f);
-    renderer.renderRectangle(contador,texturaBotonPrueba);
+    renderer.render9Patch2(contador, Colors_White,
+                           {}, 0, texturaBotonPrueba, GL2D_DefaultTextureCoords, {0.2,0.8,0.8,0.2});
     //funcion para renderizar el texto dentro de la textura del fondo.
-    //la posicion que hay que pasarle al texto es la del centro del rectangulo
-    renderer.renderText({contador.dimensions.x+contador.dimensions.z/2,contador.dimensions.y+contador.dimensions.w/2-(contador.dimensions.w/9)},
+    //la posicion que hay que pasarle al texto es la del centro del rectangulo porque esta activado lo de centrar
+    renderer.renderText({contador.dimensions.x+contador.dimensions.z/2,contador.dimensions.y+contador.dimensions.w/2-(contador.dimensions.w/12)},
                         "01 : 33",fuenteMenu,Colors_Gray,renderer.determineTextRescaleFit("skibidi",fuenteMenu,contador)
                         ,3,3,1,Colors_Transparent);
     //renderer.popCamera();
@@ -439,7 +483,7 @@ void gamePlay(float deltaTime,int w,int h){
     renderer.popCamera();
 
     //bloque de la vida del jugador arriba izquierda
-    
+
 
 
 
