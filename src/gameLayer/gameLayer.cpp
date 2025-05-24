@@ -25,6 +25,8 @@
 
 struct DatosJuego{
 
+    bool isMenuPausa = false;
+
     glm::vec2 playerPos = {100,100}; //todo lo suyo seria ponerlo aleatorio en el mapa
     float direccionGiro = -90.0f;
     float tamanioNave = 64.0f; // es el tamanio o hitbox de la nave
@@ -196,7 +198,11 @@ bool initGame()
 
 void gamePlay(float deltaTime,int w,int h){
 
-#pragma region movimiento
+#pragma region movimiento y teclas
+
+    if(platform::isButtonHeld(platform::Button::Escape) ){
+        datosJuego.isMenuPausa=!datosJuego.isMenuPausa;
+    }
 
     glm::vec2 movimiento = {};
 
@@ -432,12 +438,13 @@ void gamePlay(float deltaTime,int w,int h){
     }
 #pragma endregion
 
-
+#pragma region manejo vida jugador
     if(datosJuego.vidaJugador==0){
         //crear una pantalla de game over
         //volver al menu al aceptar
         reiniciarJuego();
     }
+#pragma endregion
 
     //movimiento de la camara al seguir al jugador. (300 es la velocidad de la camara y asi da efecto de incercia)
     renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h);
@@ -461,25 +468,23 @@ void gamePlay(float deltaTime,int w,int h){
 
 #pragma endregion
 
-#pragma region Renderizado de la Vida del Jugador
+#pragma region elementos UI
 
+    //BLoque de la vida del jugador
     renderer.pushCamera();
     //Bloque para la vida del jugador arriba izquierda
-        glui::Frame vidaFrame({0, 0, w, h});
+    glui::Frame vidaFrame({0, 0, w, h});
 
-        glui::Box vidaBox = glui::Box().xLeftPerc(0.05).yTopPerc(0.005)
-                .xDimensionPercentage(0.125).yDimensionPercentage(0.125);
+    glui::Box vidaBox = glui::Box().xLeftPerc(0.05).yTopPerc(0.005)
+            .xDimensionPercentage(0.125).yDimensionPercentage(0.125);
 
     //Renderizar corazones según la vida restante
-        for (int i = 0; i < datosJuego.vidaJugador; i++) {
-            glm::vec4 rect = {i * vidaBox.dimensions.x,vidaBox.dimensions.y, vidaBox.dimensions.z/2, vidaBox.dimensions.w/2}; // Posición y tamaño de cada corazón
-            renderer.renderRectangle(rect, texturaVidaJugador, Colors_White, {},0,atlasVidaJugador.get(0,0,0));
-        }
+    for (int i = 0; i < datosJuego.vidaJugador; i++) {
+        glm::vec4 rect = {i * vidaBox.dimensions.x,vidaBox.dimensions.y, vidaBox.dimensions.z/2, vidaBox.dimensions.w/2}; // Posición y tamaño de cada corazón
+        renderer.renderRectangle(rect, texturaVidaJugador, Colors_White, {},0,atlasVidaJugador.get(0,0,0));
+    }
     renderer.popCamera();
 
-#pragma endregion
-
-#pragma region elementos UI
 
     //Bloque del contador
     renderer.pushCamera();
@@ -510,7 +515,6 @@ void gamePlay(float deltaTime,int w,int h){
     renderer.popCamera();
 
 #pragma endregion
-
 
 #pragma region Debug dentro del juego
 
@@ -638,6 +642,7 @@ bool gameLogic(float deltaTime)
 {
 #pragma region init stuff
 	int w = 0; int h = 0;
+
 	w = platform::getFrameBufferSizeX(); //window w
 	h = platform::getFrameBufferSizeY(); //window h
 	
@@ -646,10 +651,48 @@ bool gameLogic(float deltaTime)
 
 	renderer.updateWindowMetrics(w, h);
 
-
 #pragma endregion
+    if(datosJuego.isMenuPausa){
 
-    if(datosJuego.isGame){
+
+
+    #pragma region Interfaz_pausa
+
+
+        renderer.pushCamera();
+        UIrenderer.Begin(4);
+
+        glui::Frame menuPausa({0,0,w,h});
+
+        renderer.renderRectangle({0,0,w,h}, texturaFondo[0], Colors_White,{},0);
+        renderer.renderRectangle({0,0,w,h}, texturaFondo[1], Colors_White,{},0);
+        renderer.renderRectangle({0,0,w,h}, texturaFondo[2], Colors_White,{},0);
+
+
+        UIrenderer.sliderFloat("Volumen General",&datosJuego.volumenGeneral,0,1);
+        UIrenderer.sliderFloat("Volumen Musica ",&datosJuego.volumenMusica,0,1);
+        UIrenderer.sliderFloat("Volumen FX",&datosJuego.volumenFX,0,1);
+
+        SetSoundVolume(sonidoDisparo,datosJuego.volumenFX*datosJuego.volumenGeneral);
+        SetSoundVolume(musicaFondo,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+
+        if(UIrenderer.Button("Atras",Colors_White,texturaBotonPrueba)){
+
+            datosJuego.isMenuPausa=false;
+        }
+
+        UIrenderer.End();
+
+        UIrenderer.renderFrame(renderer,fuenteMenu,platform::getRelMousePosition(),platform::isLMousePressed(),platform::isLMouseHeld(),
+                               platform::isLMouseReleased(),platform::isButtonReleased(platform::Button::Escape),platform::getTypedInput(),deltaTime);
+
+
+        renderer.popCamera();
+
+
+    #pragma endregion
+
+    }else if(datosJuego.isGame){
 
         StopSound(musicaMenu);
 
@@ -662,7 +705,7 @@ bool gameLogic(float deltaTime)
         gamePlay(deltaTime,w,h);
     }else{
 
-#pragma region interfaz_inicio
+        #pragma region interfaz_inicio
         //si la musica del menu no se esta reproduciendo la ponemos
         if(!IsSoundPlaying(musicaMenu)){
             PlaySound(musicaMenu);
@@ -692,7 +735,8 @@ bool gameLogic(float deltaTime)
 
                 //boton para el menu de opciones, todo en un archivo aparte que sean solo los constructores de las interfazces
                 if(UIrenderer.Button("Opciones",Colors_White,texturaBotonPrueba)){
-                    //llamada al constructor de la interfaz de opciones
+
+                    datosJuego.isMenuPausa=true;
                 }
 
                 //boton para salir del juego
@@ -709,7 +753,7 @@ bool gameLogic(float deltaTime)
         renderer.popCamera();
 
 
-#pragma endregion
+        #pragma endregion
 
     }
     renderer.flush();
@@ -725,3 +769,4 @@ void closeGame()
 
 
 }
+
