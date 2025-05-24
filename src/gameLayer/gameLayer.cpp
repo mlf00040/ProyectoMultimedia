@@ -159,8 +159,8 @@ bool initGame()
     explosion.loadFromFileWithPixelPadding(RESOURCES_PATH"animaciones/explosionAsset.png",32,true);
     atlasExplosion = gl2d::TextureAtlasPadding(3,2,explosion.GetSize().x,explosion.GetSize().y);
 
-    texturaVidaJugador.loadFromFileWithPixelPadding(RESOURCES_PATH"animaciones/vidaNaveSpriteSheet.png",48,true);
-    atlasVidaJugador = gl2d::TextureAtlasPadding(2,2,texturaVidaJugador.GetSize().x,texturaVidaJugador.GetSize().y);
+    texturaVidaJugador.loadFromFileWithPixelPadding(RESOURCES_PATH"animaciones/vidaNaveSpriteSheet.png",16,true);
+    atlasVidaJugador = gl2d::TextureAtlasPadding(2,1,texturaVidaJugador.GetSize().x,texturaVidaJugador.GetSize().y);
 
     texturaBotonPrueba.loadFromFile(RESOURCES_PATH"fuentes/PruebaBoton.png",true);
 
@@ -270,7 +270,10 @@ void gamePlay(float deltaTime,int w,int h){
 
         if(impacto(datosJuego.VEnemigos[i].getPosicion(),datosJuego.playerPos,datosJuego.tamanioNave,datosJuego.VEnemigos[i].getTamanio())){
             //actualizar la vida del jugador
-            datosJuego.vidaJugador--;
+            if(datosJuego.vidaJugador>0){
+                datosJuego.vidaJugador--;
+            }
+
             std::cout << "enemigo a impactado jugador"<<std::endl;
 
             //crear animacion de explosion en el lugar donde ha muerto el enemigo
@@ -430,7 +433,11 @@ void gamePlay(float deltaTime,int w,int h){
 #pragma endregion
 
 
-
+    if(datosJuego.vidaJugador==0){
+        //crear una pantalla de game over
+        //volver al menu al aceptar
+        reiniciarJuego();
+    }
 
     //movimiento de la camara al seguir al jugador. (300 es la velocidad de la camara y asi da efecto de incercia)
     renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h);
@@ -454,19 +461,28 @@ void gamePlay(float deltaTime,int w,int h){
 
 #pragma endregion
 
+#pragma region Renderizado de la Vida del Jugador
+
+    renderer.pushCamera();
+    //Bloque para la vida del jugador arriba izquierda
+        glui::Frame vidaFrame({0, 0, w, h});
+
+        glui::Box vidaBox = glui::Box().xLeftPerc(0.05).yTopPerc(0.005)
+                .xDimensionPercentage(0.125).yDimensionPercentage(0.125);
+
+    //Renderizar corazones según la vida restante
+        for (int i = 0; i < datosJuego.vidaJugador; i++) {
+            glm::vec4 rect = {i * vidaBox.dimensions.x,vidaBox.dimensions.y, vidaBox.dimensions.z/2, vidaBox.dimensions.w/2}; // Posición y tamaño de cada corazón
+            renderer.renderRectangle(rect, texturaVidaJugador, Colors_White, {},0,atlasVidaJugador.get(0,0,0));
+        }
+    renderer.popCamera();
+
+#pragma endregion
+
 #pragma region elementos UI
 
     //Bloque del contador
     renderer.pushCamera();
-
-
-    glui::Frame vida({0,0,w,h});
-    //bloque de la vida del jugador arriba izquierda
-    glui::Box espagueti = glui::Box().xLeftPerc(0.375).xDimensionPercentage(0.25).yAspectRatio(2.0f/8.0f);
-    //switch para que cambie conforme le quede menos vida al jugador.
-    renderer.renderRectangle(espagueti.dimensions,texturaVidaJugador, Colors_White, {}, 0,atlasVidaJugador.get(0,0,0));
-
-
 
     glui::Frame cont({0,0,w,h});
     glui::Box contador = glui::Box().xLeftPerc(0.375).xDimensionPercentage(0.25).yAspectRatio(2.0f/8.0f);
@@ -477,9 +493,6 @@ void gamePlay(float deltaTime,int w,int h){
     renderer.renderText({contador.dimensions.x+contador.dimensions.z/2,contador.dimensions.y+contador.dimensions.w/2-(contador.dimensions.w/12)},
                         "01 : 33",fuenteMenu,Colors_Gray,renderer.determineTextRescaleFit("skibidi",fuenteMenu,contador)
                         ,3,3,1,Colors_Transparent);
-
-
-
 
 
     //Bloque del contador de enemigos muertos abajo izquierda
@@ -493,10 +506,6 @@ void gamePlay(float deltaTime,int w,int h){
                         contKills.c_str(),fuenteMenu,Colors_White,
                         renderer.determineTextRescaleFit(contKills,fuenteMenu,killsBox),
                         3,3,0,Colors_Transparent);
-
-
-
-
 
     renderer.popCamera();
 
@@ -662,7 +671,7 @@ bool gameLogic(float deltaTime)
         renderer.pushCamera();
 
             glui::Frame menu({0,0,w,h});
-            
+
             renderer.renderRectangle({0,0,w,h}, texturaFondo[0], Colors_White,{},0);
             renderer.renderRectangle({0,0,w,h}, texturaFondo[1], Colors_White,{},0);
             renderer.renderRectangle({0,0,w,h}, texturaFondo[2], Colors_White,{},0);
