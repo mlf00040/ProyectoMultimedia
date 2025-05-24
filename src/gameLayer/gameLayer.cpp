@@ -25,7 +25,20 @@
 
 struct DatosJuego{
 
+    int numEnemigosPorOleada = 5;
+    //flag para evitar que se haga mas de un frame
+    bool oleadaGenerada = false;
+    bool oleadaAumentada = false;
+
+    int vidaEnemigos = 5;
+    bool vidaAumentada = false;
+
     bool isMenuPausa = false;
+
+    float tiempoAcumulado= 0.0f;
+    int minutos=0;
+    float segundos= 0.0f;
+    std::string contador ="";
 
     glm::vec2 playerPos = {100,100}; //todo lo suyo seria ponerlo aleatorio en el mapa
     float direccionGiro = -90.0f;
@@ -49,7 +62,6 @@ struct DatosJuego{
     bool isGame=false;
 
 }datosJuego;
-
 
 
 #pragma region cosas de semillas y random
@@ -94,7 +106,6 @@ gl2d::Font fuenteMenu;
 
 
 #pragma endregion
-
 
 
 void reiniciarJuego(){
@@ -198,6 +209,26 @@ bool initGame()
 
 void gamePlay(float deltaTime,int w,int h){
 
+#pragma region Gestion de tiempos
+
+    datosJuego.tiempoAcumulado +=deltaTime;
+
+    if(datosJuego.tiempoAcumulado >= 1.0f){
+        datosJuego.segundos++;
+        datosJuego.tiempoAcumulado -= 1.0f;
+
+        if(datosJuego.segundos >= 60){
+            datosJuego.minutos++;
+            datosJuego.segundos -= 60;
+        }
+    }
+
+    datosJuego.contador= std::to_string(datosJuego.minutos)+" : "+std::to_string(static_cast<int>(datosJuego.segundos));
+
+
+
+#pragma endregion
+
 #pragma region movimiento y teclas
 
     if(platform::isButtonHeld(platform::Button::Escape) ){
@@ -265,6 +296,77 @@ void gamePlay(float deltaTime,int w,int h){
 #pragma endregion
 
 #pragma region manejo de enemigos
+
+    //cada 30 segundos se aumenta en 1 la cantidad de spawneo
+    if((static_cast<int>(datosJuego.segundos)%30)==0 && !datosJuego.oleadaAumentada && (static_cast<int>(datosJuego.segundos)!=0) ){
+
+        datosJuego.oleadaAumentada= true;
+        datosJuego.numEnemigosPorOleada++;
+
+    }else if((static_cast<int>(datosJuego.segundos)%30)!=0){
+
+        datosJuego.oleadaAumentada=false;
+
+    }
+
+    //cada minuto se le suma 5 mas a la vida de los enemigos
+    if((static_cast<int>(datosJuego.segundos)%59)==0 && !datosJuego.vidaAumentada && (static_cast<int>(datosJuego.segundos)!=0)){
+
+        datosJuego.vidaAumentada= true;
+        datosJuego.vidaEnemigos += 2;
+
+    }else if((static_cast<int>(datosJuego.segundos)%59)!=0){
+
+        datosJuego.vidaAumentada=false;
+
+    }
+
+    //spawn de los enemigos cada 5 segundos
+    if((static_cast<int>(datosJuego.segundos)%5)==0 && !datosJuego.oleadaGenerada){
+        datosJuego.oleadaGenerada=true; //flag para evitar que se generen en mas de un frame
+        for(int i=0;i<datosJuego.numEnemigosPorOleada;i++){
+            bool posicionValida = false;
+
+            glm::vec2 nuevaPosicion = {0, 0};
+            const float radioMinimo = 600.0f; // Radio mínimo alrededor del jugador
+
+            while (!posicionValida) {
+
+                int posXrand = genPos(xd);
+                int posYrand = genPos(xd);
+                int Xsigno = genSigno(xd);
+                int Ysigno = genSigno(xd);
+
+                glm::vec2 posSumada = {0, 0};
+
+                if (Xsigno == 1) {
+                    posSumada.x += posXrand;
+                } else {
+                    posSumada.x -= posXrand;
+                }
+                if (Ysigno == 1) {
+                    posSumada.y += posYrand;
+                } else {
+                    posSumada.y -= posYrand;
+                }
+
+                nuevaPosicion = {datosJuego.playerPos.x + posSumada.x, datosJuego.playerPos.y + posSumada.y};
+
+                // Calcular la distancia entre el jugador y la nueva posición
+                float distancia = glm::distance(datosJuego.playerPos, nuevaPosicion);
+
+                // Verificar si la distancia es mayor que el radio mínimo
+                if (distancia > radioMinimo) {
+                    posicionValida = true;
+                }
+            }
+
+            spawnEnemigo(datosJuego.VEnemigos, datosJuego.vidaEnemigos, 1, 0, 350, 64, nuevaPosicion.x, nuevaPosicion.y);
+
+        }
+    }else if ((static_cast<int>(datosJuego.segundos)%5)!=0){
+        datosJuego.oleadaGenerada=false;
+    }
 
     //actualiza el movimiento de los enemigos
     for(auto &e : datosJuego.VEnemigos){
@@ -490,13 +592,13 @@ void gamePlay(float deltaTime,int w,int h){
     renderer.pushCamera();
 
     glui::Frame cont({0,0,w,h});
-    glui::Box contador = glui::Box().xLeftPerc(0.375).xDimensionPercentage(0.25).yAspectRatio(2.0f/8.0f);
-    renderer.render9Patch2(contador, Colors_White,
+    glui::Box contadorBox = glui::Box().xLeftPerc(0.375).xDimensionPercentage(0.25).yAspectRatio(2.0f/8.0f);
+    renderer.render9Patch2(contadorBox, Colors_White,
                            {}, 0, texturaBotonPrueba, GL2D_DefaultTextureCoords, {0.2,0.8,0.8,0.2});
     //funcion para renderizar el texto dentro de la textura del fondo.
     //la posicion que hay que pasarle al texto es la del centro del rectangulo porque esta activado lo de centrar
-    renderer.renderText({contador.dimensions.x+contador.dimensions.z/2,contador.dimensions.y+contador.dimensions.w/2-(contador.dimensions.w/12)},
-                        "01 : 33",fuenteMenu,Colors_Gray,renderer.determineTextRescaleFit("skibidi",fuenteMenu,contador)
+    renderer.renderText({contadorBox.dimensions.x+contadorBox.dimensions.z/2,contadorBox.dimensions.y+contadorBox.dimensions.w/2-(contadorBox.dimensions.w/12)},
+                        datosJuego.contador.c_str(),fuenteMenu,Colors_Gray,renderer.determineTextRescaleFit("skibidi",fuenteMenu,contadorBox)
                         ,3,3,1,Colors_Transparent);
 
 
@@ -516,12 +618,16 @@ void gamePlay(float deltaTime,int w,int h){
 
 #pragma endregion
 
+
 #pragma region Debug dentro del juego
 
     ImGui::Begin("debug");
     ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
     ImGui::Text("numero balas:  %d",(int)datosJuego.VBalas.size());
     ImGui::Text("numero enemigos: %d",(int)datosJuego.VEnemigos.size());
+    ImGui::Text("n enemigos oleada: %d",(int)datosJuego.numEnemigosPorOleada);
+    ImGui::Text("Vida enemigos: %d",(int)datosJuego.vidaEnemigos);
+
     ImGui::PopStyleColor();
 
     if(datosJuego.VEnemigos.size()>=1){
@@ -575,6 +681,7 @@ void gamePlay(float deltaTime,int w,int h){
 
     ImGui::End();
 #pragma endregion
+    /*
 #pragma region controladoresAudio
 
     //todo falta añadir que nose pueda pasar de un valor negativo
@@ -633,7 +740,7 @@ void gamePlay(float deltaTime,int w,int h){
 
     ImGui::End();
 #pragma endregion
-
+*/
 }
 
 
@@ -653,8 +760,6 @@ bool gameLogic(float deltaTime)
 
 #pragma endregion
     if(datosJuego.isMenuPausa){
-
-
 
     #pragma region Interfaz_pausa
 
@@ -703,6 +808,7 @@ bool gameLogic(float deltaTime)
 
         //llamamos a la funcion que ejecuta el juego.
         gamePlay(deltaTime,w,h);
+
     }else{
 
         #pragma region interfaz_inicio
