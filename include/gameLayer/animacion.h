@@ -27,6 +27,8 @@ public:
 
     void actualizar(float deltaTime);
 
+    void actualizarManual();
+
     void renderizar(gl2d::Renderer2D &renderer) ;
 
     bool estaActiva() const;

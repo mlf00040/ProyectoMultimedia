@@ -29,7 +29,7 @@ struct DatosJuego{
     float direccionGiro = -90.0f;
     float tamanioNave = 64.0f; // es el tamanio o hitbox de la nave
     int kills=0;
-    float vidaJugador = 3;
+    int vidaJugador = 3;
 
     std::vector<Balas> VBalas;
     std::vector<Enemigo> VEnemigos;
@@ -75,6 +75,9 @@ gl2d::TextureAtlasPadding atlasEnemigos;
 
 gl2d::TextureAtlasPadding atlasExplosion;
 gl2d::Texture explosion;
+
+gl2d::Texture texturaVidaJugador;
+gl2d::TextureAtlasPadding atlasVidaJugador;
 
 RenderizadoCasillas generadorCasillas[CAPASFONDO];
 
@@ -153,9 +156,11 @@ bool initGame()
         atlasEnemigos= gl2d::TextureAtlasPadding(2,1, bala1.GetSize().x,bala1.GetSize().y);
     }
 
-    explosion.loadFromFileWithPixelPadding(RESOURCES_PATH"space/explosionAsset.png",32,true);
+    explosion.loadFromFileWithPixelPadding(RESOURCES_PATH"animaciones/explosionAsset.png",32,true);
     atlasExplosion = gl2d::TextureAtlasPadding(3,2,explosion.GetSize().x,explosion.GetSize().y);
 
+    texturaVidaJugador.loadFromFileWithPixelPadding(RESOURCES_PATH"animaciones/vidaNaveSpriteSheet.png",48,true);
+    atlasVidaJugador = gl2d::TextureAtlasPadding(2,2,texturaVidaJugador.GetSize().x,texturaVidaJugador.GetSize().y);
 
     texturaBotonPrueba.loadFromFile(RESOURCES_PATH"fuentes/PruebaBoton.png",true);
 
@@ -265,7 +270,7 @@ void gamePlay(float deltaTime,int w,int h){
 
         if(impacto(datosJuego.VEnemigos[i].getPosicion(),datosJuego.playerPos,datosJuego.tamanioNave,datosJuego.VEnemigos[i].getTamanio())){
             //actualizar la vida del jugador
-
+            datosJuego.vidaJugador--;
             std::cout << "enemigo a impactado jugador"<<std::endl;
 
             //crear animacion de explosion en el lugar donde ha muerto el enemigo
@@ -276,12 +281,6 @@ void gamePlay(float deltaTime,int w,int h){
             //quitamos al enemigo
             datosJuego.VEnemigos.erase(datosJuego.VEnemigos.begin()+i);
             i--;
-
-
-
-
-            //crear animacion de impacto al jugador
-
 
             //reproducir audio de muerte.
         }
@@ -432,6 +431,7 @@ void gamePlay(float deltaTime,int w,int h){
 
 
 
+
     //movimiento de la camara al seguir al jugador. (300 es la velocidad de la camara y asi da efecto de incercia)
     renderer.currentCamera.follow(datosJuego.playerPos,deltaTime*300,10,200,w,h);
 
@@ -458,6 +458,16 @@ void gamePlay(float deltaTime,int w,int h){
 
     //Bloque del contador
     renderer.pushCamera();
+
+
+    glui::Frame vida({0,0,w,h});
+    //bloque de la vida del jugador arriba izquierda
+    glui::Box espagueti = glui::Box().xLeftPerc(0.375).xDimensionPercentage(0.25).yAspectRatio(2.0f/8.0f);
+    //switch para que cambie conforme le quede menos vida al jugador.
+    renderer.renderRectangle(espagueti.dimensions,texturaVidaJugador, Colors_White, {}, 0,atlasVidaJugador.get(0,0,0));
+
+
+
     glui::Frame cont({0,0,w,h});
     glui::Box contador = glui::Box().xLeftPerc(0.375).xDimensionPercentage(0.25).yAspectRatio(2.0f/8.0f);
     renderer.render9Patch2(contador, Colors_White,
@@ -467,10 +477,13 @@ void gamePlay(float deltaTime,int w,int h){
     renderer.renderText({contador.dimensions.x+contador.dimensions.z/2,contador.dimensions.y+contador.dimensions.w/2-(contador.dimensions.w/12)},
                         "01 : 33",fuenteMenu,Colors_Gray,renderer.determineTextRescaleFit("skibidi",fuenteMenu,contador)
                         ,3,3,1,Colors_Transparent);
-    //renderer.popCamera();
+
+
+
+
 
     //Bloque del contador de enemigos muertos abajo izquierda
-    //renderer.pushCamera();
+
     glui::Frame kil({0,0,w,h});
     glui::Box killsBox = glui::Box().xLeftPerc(0.01).xDimensionPercentage(0.075).yTopPerc(0.95).yAspectRatio(2.0f/8.0f);
     //funcion para renderizar el texto dentro de la textura del fondo.
@@ -480,13 +493,12 @@ void gamePlay(float deltaTime,int w,int h){
                         contKills.c_str(),fuenteMenu,Colors_White,
                         renderer.determineTextRescaleFit(contKills,fuenteMenu,killsBox),
                         3,3,0,Colors_Transparent);
+
+
+
+
+
     renderer.popCamera();
-
-    //bloque de la vida del jugador arriba izquierda
-
-
-
-
 
 #pragma endregion
 
@@ -647,51 +659,47 @@ bool gameLogic(float deltaTime)
             PlaySound(musicaMenu);
         }
 
-        {
-            {
+        renderer.pushCamera();
 
-                //todo hay que arrglar esto que cuando se reinicia se va todo a la mierda porque la posicion se queda fija, (se deberia de solucionar cogiendo las coordenadas de arriba a la izquierda del frame)
-                renderer.renderRectangle({0,0,w,h}, texturaFondo[0], Colors_White,{},0);
-                renderer.renderRectangle({0,0,w,h}, texturaFondo[1], Colors_White,{},0);
-                renderer.renderRectangle({0,0,w,h}, texturaFondo[2], Colors_White,{},0);
-
-
-                renderer.renderRectangle({(w/8),(h/4),(w/4),(h/2)}, texturaNavePrincipal, Colors_White,{},0);
+            glui::Frame menu({0,0,w,h});
+            
+            renderer.renderRectangle({0,0,w,h}, texturaFondo[0], Colors_White,{},0);
+            renderer.renderRectangle({0,0,w,h}, texturaFondo[1], Colors_White,{},0);
+            renderer.renderRectangle({0,0,w,h}, texturaFondo[2], Colors_White,{},0);
 
 
-            }
+            renderer.renderRectangle({(w/8),(h/4),(w/4),(h/2)}, texturaNavePrincipal, Colors_White,{},0);
 
-            {
-                //Lado izquierdo de la interfaz de Inicio (carga los botones)
-                UIrenderer.Begin(12);
+            //Lado izquierdo de la interfaz de Inicio (carga los botones)
+            UIrenderer.Begin(12);
 
-                    UIrenderer.newColum(1);
+                UIrenderer.newColum(1);
 
-                    //boton para jugar
-                    if(UIrenderer.Button("Jugar",Colors_White,texturaBotonPrueba)){
+                //boton para jugar
+                if(UIrenderer.Button("Jugar",Colors_White,texturaBotonPrueba)){
 
-                        datosJuego.isGame=true;
-                    }
+                    datosJuego.isGame=true;
+                }
 
-                    //boton para el menu de opciones, todo en un archivo aparte que sean solo los constructores de las interfazces
-                    if(UIrenderer.Button("Opciones",Colors_White,texturaBotonPrueba)){
-                        //llamada al constructor de la interfaz de opciones
-                    }
+                //boton para el menu de opciones, todo en un archivo aparte que sean solo los constructores de las interfazces
+                if(UIrenderer.Button("Opciones",Colors_White,texturaBotonPrueba)){
+                    //llamada al constructor de la interfaz de opciones
+                }
 
-                    //boton para salir del juego
-                    if(UIrenderer.Button("Salir",Colors_White,texturaBotonPrueba)){
-                        return 0;
-                    }
+                //boton para salir del juego
+                if(UIrenderer.Button("Salir",Colors_White,texturaBotonPrueba)){
+                    return 0;
+                }
 
-                UIrenderer.End();
+            UIrenderer.End();
 
-                //renderiza toda la columna
-                UIrenderer.renderFrame(renderer,fuenteMenu,platform::getRelMousePosition(),platform::isLMousePressed(),platform::isLMouseHeld(),
-                                       platform::isLMouseReleased(),platform::isButtonReleased(platform::Button::Escape),platform::getTypedInput(),deltaTime);
+            //renderiza toda la columna
+            UIrenderer.renderFrame(renderer,fuenteMenu,platform::getRelMousePosition(),platform::isLMousePressed(),platform::isLMouseHeld(),
+                                   platform::isLMouseReleased(),platform::isButtonReleased(platform::Button::Escape),platform::getTypedInput(),deltaTime);
 
-            }
+        renderer.popCamera();
 
-        }
+
 #pragma endregion
 
     }

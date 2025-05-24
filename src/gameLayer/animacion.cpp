@@ -21,6 +21,14 @@ void animacion::actualizar(float deltaTime) {
     }
 }
 
+void animacion::actualizarManual() {
+    frameActual++;
+
+    if (frameActual >= totalFrames){
+        activa=false;
+    }
+}
+
 void animacion::renderizar(gl2d::Renderer2D &renderer)  {
     if (!activa) return;
 
