@@ -392,7 +392,7 @@ void gamePlay(float deltaTime,int w,int h){
                 datosJuego.vidaJugador--;
             }
 
-            std::cout << "enemigo a impactado jugador"<<std::endl;
+            //std::cout << "enemigo a impactado jugador"<<std::endl;
 
             //crear animacion de explosion en el lugar donde ha muerto el enemigo
             datosJuego.VAnimacion.emplace_back((datosJuego.VEnemigos[i].getPosicion()-glm::vec2{datosJuego.VEnemigos[i].getTamanio()/2,datosJuego.VEnemigos[i].getTamanio()/2})
@@ -630,7 +630,7 @@ void gamePlay(float deltaTime,int w,int h){
 
 
 #pragma region Debug dentro del juego
-
+/*
     ImGui::Begin("debug");
     ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
     ImGui::Text("numero balas:  %d",(int)datosJuego.VBalas.size());
@@ -691,7 +691,7 @@ void gamePlay(float deltaTime,int w,int h){
 
     ImGui::End();
 #pragma endregion
-    /*
+
 #pragma region controladoresAudio
 
     //todo falta añadir que nose pueda pasar de un valor negativo
