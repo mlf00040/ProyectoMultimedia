@@ -33,8 +33,6 @@ struct DatosJuego{
     int vidaEnemigos = 5;
     bool vidaAumentada = false;
 
-    bool isMenuPausa = false;
-
     float tiempoAcumulado= 0.0f;
     int minutos=0;
     float segundos= 0.0f;
@@ -60,6 +58,10 @@ struct DatosJuego{
 
     //Parametros para interfaces
     bool isGame=false;
+
+    bool isMenuPausa = false;
+
+    bool isGameOver = false;
 
 }datosJuego;
 
@@ -98,10 +100,13 @@ RenderizadoCasillas generadorCasillas[CAPASFONDO];
 Sound sonidoDisparo;
 Sound musicaFondo;
 Sound musicaMenu;
+Sound musicaGameOver;
 
 glui::RendererUi UIrenderer;
 
 gl2d::Font fuenteMenu;
+
+gl2d::Font fuenteGameOver;
 
 
 
@@ -189,6 +194,8 @@ bool initGame()
 
     fuenteMenu.createFromFile(RESOURCES_PATH"roboto_black.ttf");
 
+    fuenteGameOver.createFromFile(RESOURCES_PATH"fuentes/OptimusPrincepsSemiBold.ttf");
+
 #pragma endregion
 
 #pragma region sonido
@@ -201,6 +208,9 @@ bool initGame()
     //todo cambiar el formato mp3 a .raw
     musicaMenu = LoadSound(RESOURCES_PATH"sonidos/MusicaMenu.mp3");
     SetSoundVolume(musicaMenu,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+
+    musicaGameOver = LoadSound(RESOURCES_PATH"sonidos/UndertaleOSTDetermination.mp3");
+    SetSoundVolume(musicaGameOver,datosJuego.volumenMusica*datosJuego.volumenGeneral);
 
 #pragma endregion
 
@@ -542,9 +552,9 @@ void gamePlay(float deltaTime,int w,int h){
 
 #pragma region manejo vida jugador
     if(datosJuego.vidaJugador==0){
-        //crear una pantalla de game over
-        //volver al menu al aceptar
-        reiniciarJuego();
+
+        datosJuego.isGame=false;
+        datosJuego.isGameOver=true;
     }
 #pragma endregion
 
@@ -598,7 +608,7 @@ void gamePlay(float deltaTime,int w,int h){
     //funcion para renderizar el texto dentro de la textura del fondo.
     //la posicion que hay que pasarle al texto es la del centro del rectangulo porque esta activado lo de centrar
     renderer.renderText({contadorBox.dimensions.x+contadorBox.dimensions.z/2,contadorBox.dimensions.y+contadorBox.dimensions.w/2-(contadorBox.dimensions.w/12)},
-                        datosJuego.contador.c_str(),fuenteMenu,Colors_Gray,renderer.determineTextRescaleFit("skibidi",fuenteMenu,contadorBox)
+                        datosJuego.contador.c_str(),fuenteMenu,Colors_Gray,renderer.determineTextRescaleFit(datosJuego.contador.c_str(),fuenteMenu,contadorBox)
                         ,3,3,1,Colors_Transparent);
 
 
@@ -761,7 +771,7 @@ bool gameLogic(float deltaTime)
 #pragma endregion
     if(datosJuego.isMenuPausa){
 
-    #pragma region Interfaz_pausa
+    #pragma region Interfaz ajustes
 
 
         renderer.pushCamera();
@@ -780,6 +790,8 @@ bool gameLogic(float deltaTime)
 
         SetSoundVolume(sonidoDisparo,datosJuego.volumenFX*datosJuego.volumenGeneral);
         SetSoundVolume(musicaFondo,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+        SetSoundVolume(musicaGameOver,datosJuego.volumenMusica*datosJuego.volumenGeneral);
+        SetSoundVolume(musicaMenu,datosJuego.volumenMusica*datosJuego.volumenGeneral);
 
         if(UIrenderer.Button("Atras",Colors_White,texturaBotonPrueba)){
 
@@ -800,6 +812,7 @@ bool gameLogic(float deltaTime)
     }else if(datosJuego.isGame){
 
         StopSound(musicaMenu);
+        StopSound(musicaGameOver);
 
         if(!IsSoundPlaying(musicaFondo)){
 
@@ -809,57 +822,110 @@ bool gameLogic(float deltaTime)
         //llamamos a la funcion que ejecuta el juego.
         gamePlay(deltaTime,w,h);
 
+    }else if (datosJuego.isGameOver){
+
+    #pragma region Pantalla Game Over
+
+        StopSound(musicaFondo);
+
+        if(!IsSoundPlaying(musicaGameOver)){
+
+            PlaySound(musicaGameOver);
+        }
+
+        renderer.pushCamera();
+
+        glui::Frame finJuegoFrame({0,0,w,h});
+
+        renderer.renderRectangle({0,0,w,h},Colors_Black);
+
+        UIrenderer.Begin(5);
+
+        UIrenderer.Text("Game Over",Colors_Red);
+
+        UIrenderer.Text(("Kills: "+ std::to_string(datosJuego.kills)+"              "+"Tiempo: "+datosJuego.contador.c_str()),Colors_White);
+
+
+        if(UIrenderer.Button("Restart",Colors_White,texturaBotonPrueba)){
+
+            datosJuego.isGameOver=false;
+
+            reiniciarJuego();
+
+            datosJuego.isGame=true;
+        }
+
+        if(UIrenderer.Button("Menu",Colors_White,texturaBotonPrueba)){
+
+            datosJuego.isGameOver=false;
+        }
+
+        UIrenderer.End();
+
+        UIrenderer.renderFrame(renderer,fuenteGameOver,platform::getRelMousePosition(),platform::isLMousePressed(),platform::isLMouseHeld(),
+                               platform::isLMouseReleased(),platform::isButtonReleased(platform::Button::Escape),platform::getTypedInput(),deltaTime);
+
+
+        renderer.popCamera();
+
+    #pragma endregion
+
+
     }else{
 
-        #pragma region interfaz_inicio
+    #pragma region interfaz_inicio
         //si la musica del menu no se esta reproduciendo la ponemos
+
+        StopSound(musicaGameOver);
+        StopSound(musicaFondo);
+
         if(!IsSoundPlaying(musicaMenu)){
             PlaySound(musicaMenu);
         }
 
         renderer.pushCamera();
 
-            glui::Frame menu({0,0,w,h});
+        glui::Frame menu({0,0,w,h});
 
-            renderer.renderRectangle({0,0,w,h}, texturaFondo[0], Colors_White,{},0);
-            renderer.renderRectangle({0,0,w,h}, texturaFondo[1], Colors_White,{},0);
-            renderer.renderRectangle({0,0,w,h}, texturaFondo[2], Colors_White,{},0);
+        renderer.renderRectangle({0,0,w,h}, texturaFondo[0], Colors_White,{},0);
+        renderer.renderRectangle({0,0,w,h}, texturaFondo[1], Colors_White,{},0);
+        renderer.renderRectangle({0,0,w,h}, texturaFondo[2], Colors_White,{},0);
 
 
-            renderer.renderRectangle({(w/8),(h/4),(w/4),(h/2)}, texturaNavePrincipal, Colors_White,{},0);
+        renderer.renderRectangle({(w/8),(h/4),(w/4),(h/2)}, texturaNavePrincipal, Colors_White,{},0);
 
-            //Lado izquierdo de la interfaz de Inicio (carga los botones)
-            UIrenderer.Begin(12);
+        //Lado izquierdo de la interfaz de Inicio (carga los botones)
+        UIrenderer.Begin(12);
 
-                UIrenderer.newColum(1);
+        UIrenderer.newColum(1);
 
-                //boton para jugar
-                if(UIrenderer.Button("Jugar",Colors_White,texturaBotonPrueba)){
+        //boton para jugar
+        if(UIrenderer.Button("Jugar",Colors_White,texturaBotonPrueba)){
 
-                    datosJuego.isGame=true;
-                }
+            datosJuego.isGame=true;
+        }
 
-                //boton para el menu de opciones, todo en un archivo aparte que sean solo los constructores de las interfazces
-                if(UIrenderer.Button("Opciones",Colors_White,texturaBotonPrueba)){
+        //boton para el menu de opciones, todo en un archivo aparte que sean solo los constructores de las interfazces
+        if(UIrenderer.Button("Opciones",Colors_White,texturaBotonPrueba)){
 
-                    datosJuego.isMenuPausa=true;
-                }
+            datosJuego.isMenuPausa=true;
+        }
 
-                //boton para salir del juego
-                if(UIrenderer.Button("Salir",Colors_White,texturaBotonPrueba)){
-                    return 0;
-                }
+        //boton para salir del juego
+        if(UIrenderer.Button("Salir",Colors_White,texturaBotonPrueba)){
+            return 0;
+        }
 
-            UIrenderer.End();
+        UIrenderer.End();
 
-            //renderiza toda la columna
-            UIrenderer.renderFrame(renderer,fuenteMenu,platform::getRelMousePosition(),platform::isLMousePressed(),platform::isLMouseHeld(),
-                                   platform::isLMouseReleased(),platform::isButtonReleased(platform::Button::Escape),platform::getTypedInput(),deltaTime);
+        //renderiza toda la columna
+        UIrenderer.renderFrame(renderer,fuenteMenu,platform::getRelMousePosition(),platform::isLMousePressed(),platform::isLMouseHeld(),
+                               platform::isLMouseReleased(),platform::isButtonReleased(platform::Button::Escape),platform::getTypedInput(),deltaTime);
 
         renderer.popCamera();
 
 
-        #pragma endregion
+    #pragma endregion
 
     }
     renderer.flush();
