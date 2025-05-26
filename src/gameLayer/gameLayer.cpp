@@ -858,6 +858,7 @@ bool gameLogic(float deltaTime)
         if(UIrenderer.Button("Menu",Colors_White,texturaBotonPrueba)){
 
             datosJuego.isGameOver=false;
+            datosJuego={};
         }
 
         UIrenderer.End();
